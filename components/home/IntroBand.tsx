@@ -36,7 +36,7 @@ export function IntroBand() {
 
         <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl shadow-luxury">
           <Image
-            src={pickOneByRole("intro", 7, { orientation: "portrait", includeBranded: true })}
+            src={pickOneByRole("intro", 2, { orientation: "portrait", includeBranded: true })}
             alt="Pinemont mountain retreat"
             fill
             sizes="(min-width: 1024px) 50vw, 100vw"
