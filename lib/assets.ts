@@ -4,8 +4,8 @@
 import { CATALOG, pickByRole, pickOneByRole, filterByRole } from "./image-catalog";
 
 // Pinned, non-random imagery — change these to swap a hero / OG image.
-export const HERO_IMAGE = "/assets/806100141.jpg";
-// export const HERO_IMAGE = "/assets/806101451.jpg";
+// export const HERO_IMAGE = "/assets/806100141.jpg";
+export const HERO_IMAGE = "/assets/806101451.jpg";
 // export const HERO_IMAGE = "/assets/806101287.jpg";
 export const OG_IMAGE = "/assets/806100140.jpg";
 
