@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -7,6 +7,16 @@ const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
   variable: "--font-sans",
+});
+
+// Cormorant Garamond — the editorial / luxury-hotel display serif. Used for
+// the hero accent and other "magazine layout" eyebrow moments.
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  style: ["italic", "normal"],
+  display: "swap",
+  variable: "--font-luxe",
 });
 
 // Script font is loaded via @font-face in globals.css from /public/fonts/TuesdayNight.woff2
@@ -26,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={poppins.variable} style={scriptVar}>
+    <html lang="en" className={`${poppins.variable} ${cormorant.variable}`} style={scriptVar}>
       <body className="bg-background text-foreground antialiased">
         {children}
       </body>

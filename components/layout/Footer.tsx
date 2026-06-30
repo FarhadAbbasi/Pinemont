@@ -8,7 +8,7 @@ import { BRAND, NAV_ITEMS } from "@/lib/content";
 export function Footer() {
   return (
     <footer className="relative bg-gradient-dark text-white">
-      <Container className="grid gap-12 py-16 sm:gap-10 sm:py-20 md:grid-cols-2 lg:grid-cols-4">
+      <Container className="grid gap-24 py-6 sm:gap-10 sm:py-20 md:grid-cols-2 lg:grid-cols-4">
         {/* Col 1 — brand */}
         <div>
           <Link href="/" className="flex items-center gap-2">

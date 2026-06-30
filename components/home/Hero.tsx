@@ -21,14 +21,22 @@ export function Hero() {
         />
       </div>
 
-      {/* Scrim — top tint for header readability + heavy bottom for text */}
+      {/* Luxury scrim — four stacked layers (back-to-front):
+       *   1. Diagonal dim across the whole image for depth.
+       *   2. Top dark fade so the header stays readable on bright shots.
+       *   3. Soft warm-gold radial halo behind the headline (the luxe touch).
+       *   4. Heavy bottom-up black so the H1/CTA always read sharply.
+       */}
+      <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-br from-hsq-black/60 via-hsq-graphite/35 to-hsq-black/75" />
+      <div aria-hidden className="absolute inset-x-0 top-0 -z-10 h-48 bg-gradient-to-b from-hsq-black/70 via-hsq-black/30 to-transparent" />
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0)_30%,rgba(0,0,0,0)_55%,rgba(0,0,0,0.7)_100%)]"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_70%_55%_at_50%_72%,rgba(215,171,78,0.22)_0%,transparent_70%)]"
       />
+      <div aria-hidden className="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-gradient-to-t from-hsq-black/95 via-hsq-black/55 to-transparent" />
 
       <div className="relative mx-auto flex h-full min-h-[70vh] w-full max-w-screen-xl flex-col items-center justify-end px-4 pb-16 pt-32 text-center sm:min-h-[80vh] sm:px-6 sm:pb-20 sm:pt-40 lg:min-h-[92vh] lg:px-8 lg:pb-28">
-        <p className="tuesday-script text-4xl text-hsq-gold sm:text-5xl lg:text-6xl">
+        <p className="font-luxe italic font-light tracking-[0.04em] text-hsq-gold text-5xl sm:text-6xl lg:text-7xl leading-none">
           {BRAND.scriptAccent}
         </p>
         <h1 className="mt-2 text-h1 text-white">

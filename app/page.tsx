@@ -27,11 +27,11 @@ export default function HomePage() {
         <Rooms />
         <Restaurant />
         <GalleryTeaser />
-        <DecorPackages />
+        {/* <DecorPackages /> */}
         <Testimonials />
         <LocationMap />
-        <FaqSection />
-        <SeoText />
+        {/* <FaqSection /> */}
+        {/* <SeoText /> */}
         <FinalCta />
       </main>
       <Footer />

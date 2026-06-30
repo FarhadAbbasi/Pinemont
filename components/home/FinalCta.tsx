@@ -20,7 +20,9 @@ export function FinalCta() {
         className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,rgba(10,10,12,0.85),rgba(27,27,29,0.75))]"
       />
       <Container className="text-center text-white">
-        <p className="tuesday-script text-4xl text-hsq-gold sm:text-5xl">Plan your escape</p>
+        <p className="font-luxe italic font-light tracking-[0.04em] text-hsq-gold text-4xl sm:text-5xl lg:text-6xl leading-none">
+          Plan your escape
+        </p>
         <h2 className="mx-auto mt-2 max-w-2xl text-h2 text-white">
           Begin Your Next Mountain Stay With Pinemont
         </h2>

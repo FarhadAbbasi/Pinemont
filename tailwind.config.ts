@@ -78,6 +78,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         script: ["var(--font-script)", "'Great Vibes'", "cursive"],
+        luxe: ["var(--font-luxe)", "'Cormorant Garamond'", "Georgia", "serif"],
       },
       fontSize: {
         // Mapped from Design-System.md typography.roles
