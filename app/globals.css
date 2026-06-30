@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   TOKEN LAYER — verbatim from Design-System.md §A and §E.
+   Components must reference these via tailwind classes
+   (e.g. bg-primary, text-hsq-gold) — never raw hex/px.
+   ============================================================ */
+
+@layer base {
+  :root {
+    /* Brand */
+    --hsq-gold: 41 63% 58%;        /* #D7AB4E */
+    --hsq-gold-hover: 36 61% 53%;  /* #D49237 */
+    --hsq-gold-soft: 39 73% 68%;   /* #EAC273 */
+    --hsq-gold-deep: 40 53% 51%;   /* #C69A3D */
+    --hsq-black: 240 4% 4%;        /* #0A0A0C */
+    --hsq-graphite: 240 4% 11%;    /* #1B1B1D */
+    --hsq-white: 0 0% 100%;
+    --hsq-offwhite: 60 14% 96%;    /* #F6F6F2 */
+    --hsq-cream: 39 100% 93%;      /* #FFF2DB */
+    --hsq-cream-soft: 37 100% 97%; /* #FFF9EF */
+
+    /* Semantic (light mode) */
+    --background: 60 14% 96%;
+    --foreground: 240 4% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 4% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 4% 4%;
+    --primary: 41 63% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 4% 11%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 60 14% 96%;
+    --muted-foreground: 240 4% 45%;
+    --accent: 41 63% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 4% 85%;
+    --input: 240 4% 85%;
+    --ring: 41 63% 58%;
+    --radius: 1rem;
+
+    /* Composite tokens */
+    --gradient-gold: linear-gradient(135deg, hsl(41 63% 58%), hsl(41 63% 58%));
+    --gradient-dark: linear-gradient(135deg, hsl(var(--hsq-black)), hsl(var(--hsq-graphite)));
+    --shadow-luxury: 0 25px 50px -12px hsl(var(--hsq-black) / 0.25);
+    --shadow-gold:   0 10px 30px -10px hsl(41 63% 58% / 0.30);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 240 4% 4%;
+    --foreground: 0 0% 100%;
+    --card: 240 4% 11%;
+    --card-foreground: 0 0% 100%;
+    --popover: 240 4% 11%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 41 63% 58%;
+    --primary-foreground: 240 4% 4%;
+    --secondary: 240 4% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 4% 15%;
+    --muted-foreground: 240 4% 65%;
+    --accent: 41 63% 58%;
+    --accent-foreground: 240 4% 4%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 4% 20%;
+    --input: 240 4% 20%;
+    --ring: 41 63% 58%;
+  }
+
+  /* ---------- self-hosted decorative font ----------
+     Drop a TuesdayNight.woff2 file into /public/fonts/ to enable
+     the hero script accent. Until then it falls back to Great Vibes.       */
+  @font-face {
+    font-family: "Tuesday";
+    src: url("/fonts/TuesdayNight.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-sans), system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans), system-ui, sans-serif;
+    font-weight: 700;
+    color: hsl(var(--foreground));
+  }
+  /* Selection — matches §D.4 selection rule */
+  ::selection      { background-color: hsl(var(--hsq-gold) / 0.30); }
+  ::-moz-selection { background-color: hsl(var(--hsq-gold) / 0.30); }
+
+  /* Focus-visible — gold ring everywhere */
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* Signature secondary CTA from §C.1 — verbatim port */
+  .bookbtn {
+    background-color: hsl(var(--hsq-white));
+    color: hsl(var(--hsq-black));
+    padding: 0.25rem 0.75rem;
+    border: 1px solid hsl(var(--hsq-black));
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    transition: var(--transition-smooth);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    white-space: nowrap;
+  }
+  .bookbtn:hover {
+    background-color: hsl(var(--hsq-gold));
+    color: hsl(var(--hsq-white));
+    border-color: transparent;
+    box-shadow: var(--shadow-gold);
+  }
+  .bookbtn--inverse {
+    background-color: transparent;
+    color: hsl(var(--hsq-white));
+    border-color: hsl(var(--hsq-white));
+  }
+  .bookbtn--inverse:hover {
+    background-color: hsl(var(--hsq-gold));
+    color: hsl(var(--hsq-white));
+    border-color: transparent;
+  }
+
+  /* Hero script accent — §C.3 */
+  .tuesday-script {
+    font-family: "Tuesday", "Great Vibes", cursive;
+    font-weight: 400;
+  }
+
+  /* Section eyebrow — §C.4 */
+  .eyebrow {
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: hsl(var(--hsq-gold));
+  }
+
+  /* Card surface — §B.3 */
+  .surface-card {
+    background-color: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px -4px rgba(10, 10, 12, 0.10), 0 2px 6px rgba(10, 10, 12, 0.04);
+    transition: var(--transition-smooth);
+  }
+  .surface-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px -10px rgba(10, 10, 12, 0.18);
+  }
+}
+
+/* Hide scrollbar utility for horizontal carousels on mobile */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
