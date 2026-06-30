@@ -4,7 +4,7 @@ import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
 import { EyebrowHeading } from "@/components/ui/EyebrowHeading";
 import { Button } from "@/components/ui/Button";
-import { ROOMS } from "@/lib/content";
+import { ROOMS, type Room } from "@/lib/content";
 import { pickByRole } from "@/lib/assets";
 
 /** Rooms & Suites — §C.6 + §D.1 row 6.
@@ -38,7 +38,7 @@ function RoomCard({
   room,
   src,
 }: {
-  room: (typeof ROOMS)[number];
+  room: Room;
   src: string;
 }) {
   return (

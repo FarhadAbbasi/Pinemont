@@ -79,18 +79,22 @@ export const Button = forwardRef<HTMLButtonElement, AnyButtonProps>(function But
     if (external) {
       return (
         <a
+          {...(linkRest as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
           href={href}
           target="_blank"
           rel="noopener noreferrer"
           className={classes}
-          {...(linkRest as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
         >
           {children}
         </a>
       );
     }
     return (
-      <Link href={href} className={classes} {...(linkRest as React.ComponentProps<typeof Link>)}>
+      <Link
+        {...(linkRest as Omit<React.ComponentProps<typeof Link>, "href" | "className">)}
+        href={href}
+        className={classes}
+      >
         {children}
       </Link>
     );

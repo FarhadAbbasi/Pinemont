@@ -38,14 +38,21 @@ export const AMENITIES = [
   { icon: ShieldCheck, title: "Safety First",           body: "Safety and privacy guaranteed." },
 ] as const;
 
-export const ROOMS = [
-  { name: "Standard Room",       desc: "Cozy retreat designed for solo travellers and couples.", price: "PKR 10,500" },
+export type Room = {
+  name: string;
+  desc: string;
+  price: string;
+  featured?: boolean;
+};
+
+export const ROOMS: readonly Room[] = [
+  { name: "Standard Room",       desc: "Cozy retreat designed for solo travellers and couples.",                price: "PKR 10,500" },
   { name: "Deluxe Room",         desc: "Spacious deluxe room with stylish interior and relaxing environment.", price: "PKR 14,500" },
   { name: "Deluxe Plus",         desc: "Upgraded deluxe with private balcony and valley view.",                price: "PKR 18,500" },
   { name: "Executive Room",      desc: "Designed for unmatched relaxation and remote work comfort.",           price: "PKR 22,500" },
   { name: "Family Suite",        desc: "Two-room suite ideal for families up to six guests.",                  price: "PKR 28,500" },
   { name: "Presidential Suite",  desc: "Top-floor flagship with panoramic mountain views.",                    price: "PKR 33,000", featured: true },
-] as const;
+];
 
 export const CUISINES = [
   { name: "Local Kitchen",  body: "Spicy biryani, creamy curries, and hot tandoori — real desi taste in every bite." },
