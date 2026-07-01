@@ -59,10 +59,12 @@ export function Header() {
             height={200}
             priority
             className={cn(
-              "h-10 w-auto transition-[filter] duration-smooth ease-smooth lg:h-12",
-              // Small white drop-shadow lifts the green letters when the
-              // logo sits over the dark hero image; drops away on scroll.
-              !scrolled && "drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]"
+              "h-8 w-auto transition-[filter] duration-smooth ease-smooth lg:h-10",
+              // Over the dark hero: invert to a solid white silhouette so
+              // the pine-green wordmark stays fully legible against the
+              // scrim. Back to full brand colours once the header goes
+              // white on scroll.
+              !scrolled && "brightness-0 invert drop-shadow-[0_1px_3px_rgba(0,0,0,0.45)]"
             )}
           />
         </Link>

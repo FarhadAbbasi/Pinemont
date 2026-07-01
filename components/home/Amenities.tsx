@@ -14,6 +14,11 @@ import { Button } from "@/components/ui/Button";
 import { BRAND } from "@/lib/content";
 import type { LucideIcon } from "lucide-react";
 
+// Standalone M-mountain — Pinemont's brand symbol. Used here because
+// the eyebrow slot wants a single glyph, and the M mark is what stands
+// in for the wordmark at glyph-size (never the P from the wordmark).
+const LOGO_M = "/brand/Logo-M-Transparent.png";
+
 /**
  * Amenities band — Design-System §C.5 / §D.1 row 5.
  *
@@ -64,7 +69,13 @@ export function Amenities() {
           <div className="relative flex flex-col items-center gap-8 px-5 py-12 sm:px-10 sm:py-16 lg:flex-row lg:items-center lg:gap-12 lg:px-16 lg:py-20">
             {/* Left: brand + heading + CTA */}
             <div className="flex w-full flex-col items-center text-center lg:w-1/2 lg:order-1">
-              <span className="tuesday-script text-5xl text-hsq-gold sm:text-6xl">P</span>
+              <Image
+                src={LOGO_M}
+                alt={`${BRAND.name} mark`}
+                width={200}
+                height={140}
+                className="h-14 w-auto sm:h-16 lg:h-20 drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]"
+              />
               <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-white sm:text-3xl lg:text-4xl">
                 Hotel Guest Facilities
               </h2>

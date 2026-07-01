@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Instagram, Facebook, MapPin, Phone, Mail } from "lucide-react";
 import { Container } from "./Container";
 import { NewsletterForm } from "./NewsletterForm";
@@ -11,11 +12,20 @@ export function Footer() {
       <Container className="grid gap-24 py-6 sm:gap-10 sm:py-20 md:grid-cols-2 lg:grid-cols-4">
         {/* Col 1 — brand */}
         <div>
-          <Link href="/" className="flex items-center gap-2">
-            <span className="tuesday-script text-4xl text-hsq-gold">P</span>
-            <span className="text-sm font-semibold uppercase tracking-[0.2em]">
-              {BRAND.name}
-            </span>
+          <Link
+            href="/"
+            aria-label={`${BRAND.name} — home`}
+            className="inline-flex items-center"
+          >
+            <Image
+              src="/brand/Logo-Pinemont-Transparent.png"
+              alt={`${BRAND.name} Hotel Murree`}
+              width={720}
+              height={200}
+              // Wordmark is deep pine green — inverted to white so it
+              // stays legible against the dark gradient footer.
+              className="h-10 w-auto brightness-0 invert drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]"
+            />
           </Link>
           <p className="mt-4 max-w-xs text-body-sm text-white/70">
             {BRAND.tagline}. Placeholder hospitality copy &mdash; replace with
