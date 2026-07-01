@@ -28,7 +28,8 @@ export type Category =
   | "amenity"      // recreation, conference, kids, pool, gym...
   | "view"         // mountain / valley views, scenery
   | "detail"       // artistic close-ups, decor stills
-  | "lifestyle";   // people enjoying the property
+  | "lifestyle"    // people enjoying the property
+  | "brand";       // logos, marks, brand renders
 
 export type Role =
   | "hero"        // full-bleed landing hero
@@ -42,7 +43,10 @@ export type Role =
   | "lobby"       // lobby / lounge moments
   | "view"        // mountain / scenery
   | "lifestyle"   // people-driven storytelling
-  | "branded";    // standalone with text/logo overlay
+  | "branded"     // standalone with text/logo overlay
+  | "logoMark"    // Pinemont M-mountain symbol (standalone use only)
+  | "wordmark"    // Pinemont full wordmark with tagline
+  | "favicon";    // small-size mark suitable for browser tab icon
 
 export type CatalogEntry = {
   src: string;
@@ -426,6 +430,67 @@ export const CATALOG: readonly CatalogEntry[] = [
     roles: ["gallery"],
     branded: false,
     desc: "AVIF file too large to render in this audit — review manually before pinning.",
+  },
+
+  // ---------- BRAND / LOGOS ----------
+  // The M-mountain is Pinemont's standalone symbol — two sharp gold peaks
+  // that also read as the letter "M" (from MONT), with small white snow
+  // chunks near each summit. IMPORTANT: never use it as a substitute for
+  // the letter "P" in Pinemont. It is an M, not a P.
+  {
+    src: "/brand/Logo-M-Transparent.png",
+    category: "brand",
+    orientation: "square",
+    roles: ["logoMark", "favicon"],
+    branded: false,
+    desc:
+      "Pinemont M-mountain symbol on transparent background. Two sharp gold" +
+      " peaks reading as the letter M, small white snow chunks near each summit." +
+      " Standalone use only (icon, favicon, avatar, watermark corner). Never" +
+      " swap for the letter P in the wordmark.",
+  },
+  {
+    src: "/brand/Logo-M-WhiteBG.png",
+    category: "brand",
+    orientation: "square",
+    roles: ["logoMark", "favicon"],
+    branded: false,
+    desc:
+      "Same M-mountain symbol on a soft white square. Use inside bounded" +
+      " avatar frames or over busy imagery where a lit backdrop helps read.",
+  },
+  {
+    src: "/brand/Logo-Pinemont-Transparent.png",
+    category: "brand",
+    orientation: "landscape",
+    roles: ["wordmark"],
+    branded: false,
+    desc:
+      "Full Pinemont wordmark on transparent background — 'PINEMONT' in deep" +
+      " pine green bold caps with a green pine tree replacing the I and the" +
+      " gold M-mountain replacing the M, plus a thin gold rule under the" +
+      " wordmark with 'HOTEL MURREE' tagline. Default choice for headers," +
+      " footers, and printed collateral.",
+  },
+  {
+    src: "/brand/Logo-Pinemont-WhiteBG.png",
+    category: "brand",
+    orientation: "landscape",
+    roles: ["wordmark"],
+    branded: false,
+    desc:
+      "Same wordmark on a white background. Use on top of dark hero photos" +
+      " where a lit panel behind the logo is desired.",
+  },
+  {
+    src: "/brand/logo.jpg",
+    category: "brand",
+    orientation: "square",
+    roles: ["logoMark"],
+    branded: false,
+    desc:
+      "Legacy JPG copy of the M-mountain symbol on white. Kept for backwards" +
+      " compatibility — prefer the transparent PNG versions above.",
   },
 ];
 
