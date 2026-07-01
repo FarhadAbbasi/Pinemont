@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Container } from "./Container";
@@ -48,15 +49,22 @@ export function Header() {
         {/* Brand */}
         <Link
           href="/"
-          className={cn(
-            "flex items-center gap-2 font-script text-2xl leading-none",
-            scrolled ? "text-hsq-black" : "text-white"
-          )}
+          aria-label={`${BRAND.name} — home`}
+          className="flex items-center"
         >
-          <span className="tuesday-script text-3xl text-hsq-gold">P</span>
-          <span className="font-sans text-base font-semibold uppercase tracking-[0.2em]">
-            {BRAND.name}
-          </span>
+          <Image
+            src="/brand/Logo-Pinemont-Transparent.png"
+            alt={`${BRAND.name} Hotel Murree`}
+            width={720}
+            height={200}
+            priority
+            className={cn(
+              "h-10 w-auto transition-[filter] duration-smooth ease-smooth lg:h-12",
+              // Small white drop-shadow lifts the green letters when the
+              // logo sits over the dark hero image; drops away on scroll.
+              !scrolled && "drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]"
+            )}
+          />
         </Link>
 
         {/* Desktop nav */}
