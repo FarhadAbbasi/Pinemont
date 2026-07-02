@@ -31,7 +31,7 @@ export function Footer() {
             {BRAND.tagline}. Placeholder hospitality copy &mdash; replace with
             final brand voice.
           </p>
-          <div className="mt-6 flex items-center gap-3">
+          <div className="m-6 flex items-center gap-3">
             <a
               href={BRAND.social.instagram}
               target="_blank"
@@ -51,6 +51,7 @@ export function Footer() {
               <Facebook className="h-4 w-4" />
             </a>
           </div>
+             <a href="./brand-kit.html">Pinemont Brand Kit</a>
         </div>
 
         {/* Col 2 — quick links */}
@@ -109,8 +110,7 @@ export function Footer() {
 
       <div className="border-t border-white/10">
         <Container className="flex flex-col items-center justify-between gap-3 py-6 text-caption text-white/50 sm:flex-row">
-          <p>&copy; {new Date().getFullYear()} {BRAND.name}. All rights reserved.</p>
-          <p>Built faithfully against the HSQ Towers design system.</p>
+          <p>&copy; {new Date().getFullYear()} { "Skygate Marketing" || BRAND.name}. All rights reserved.</p>
         </Container>
       </div>
     </footer>

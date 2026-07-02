@@ -3,10 +3,19 @@
 
 import { CATALOG, pickByRole, pickOneByRole, filterByRole } from "./image-catalog";
 
-// Pinned, non-random imagery — change these to swap a hero / OG image.
-// export const HERO_IMAGE = "/assets/806100141.jpg";
-export const HERO_IMAGE = "/assets/806101451.jpg";
-// export const HERO_IMAGE = "/assets/806101287.jpg";
+// Pinned, non-random imagery — order defines the hero slider sequence.
+// Add / reorder freely; Hero.tsx picks them up automatically.
+export const HERO_IMAGES: readonly string[] = [
+  "/assets/806101451.jpg",
+  "/assets/806100141.jpg",
+  "/assets/806101282.jpg",
+  "/assets/806116043.jpg",
+  "/assets/525613867_17870551389408467_7401026065006564517_n.jpg",
+];
+
+// Back-compat: first slide is still the canonical single hero image.
+export const HERO_IMAGE = HERO_IMAGES[0];
+
 export const OG_IMAGE = "/assets/806100140.jpg";
 
 // Back-compat: full list of public asset paths (used to be the only export).

@@ -8,7 +8,7 @@ import { BRAND } from "@/lib/content";
  *  Left: H2 + address + CTA. Right: map iframe (OSM placeholder). */
 export function LocationMap() {
   return (
-    <Section id="location" tone="default">
+    <Section id="location" tone="cream">
       <Container className="grid items-stretch gap-8 lg:grid-cols-2 lg:gap-12">
         <div className="flex flex-col justify-center">
           <p className="eyebrow">Find Us</p>

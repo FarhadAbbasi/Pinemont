@@ -9,8 +9,9 @@ const poppins = Poppins({
   variable: "--font-sans",
 });
 
-// Cormorant Garamond — the editorial / luxury-hotel display serif. Used for
-// the hero accent and other "magazine layout" eyebrow moments.
+// Cormorant Garamond — the Pinemont v3 display face (Aman / Le Bristol / Four
+// Seasons register). Upright weight 500 is the H1/H2/H3 face site-wide (set by
+// the base rule in globals.css). Italic 300 is reserved for poetic accents.
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "500"],

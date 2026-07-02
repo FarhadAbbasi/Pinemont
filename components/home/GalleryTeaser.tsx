@@ -13,7 +13,7 @@ export function GalleryTeaser() {
   const variants = ["aspect-square", "aspect-[4/5]", "aspect-square", "aspect-[4/5]",
                     "aspect-[4/5]", "aspect-square", "aspect-[4/5]", "aspect-square"];
   return (
-    <Section id="gallery" tone="offwhite">
+    <Section id="gallery" tone="cream">
       <Container>
         <EyebrowHeading
           eyebrow="Photo Gallery Of Our Premium Hotel"

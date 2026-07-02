@@ -10,7 +10,7 @@ import { TESTIMONIALS } from "@/lib/content";
  *  on mobile and a 3-up grid on lg+ (zero JS, fully accessible). */
 export function Testimonials() {
   return (
-    <Section tone="cream">
+    <Section tone="linen">
       <Container>
         <EyebrowHeading
           eyebrow="Guest Voices"

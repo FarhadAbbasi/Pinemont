@@ -6,7 +6,7 @@ import { pickOneByRole } from "@/lib/assets";
 /** Final CTA band — §D.1 row 14. Dark hero-mini with primary CTA. */
 export function FinalCta() {
   return (
-    <section className="relative isolate overflow-hidden py-20 sm:py-24 lg:py-28">
+    <section className="relative isolate overflow-hidden py-28 sm:py-36 lg:py-44">
       <Image
         src={pickOneByRole("finalCta", 99, { orientation: "landscape", includeBranded: true })}
         alt=""
@@ -15,22 +15,28 @@ export function FinalCta() {
         sizes="100vw"
         className="-z-20 object-cover"
       />
+      {/* Deep pine → warm ink scrim + foil halo. Values map to Pinemont v3
+          tokens (Pinemont-Brand.md §3.1: --hsq-pine and --hsq-black). */}
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,rgba(10,10,12,0.85),rgba(27,27,29,0.75))]"
+        className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,rgba(15,42,32,0.85),rgba(26,21,18,0.78))]"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_65%_50%_at_50%_60%,rgba(200,164,94,0.18)_0%,transparent_70%)]"
       />
       <Container className="text-center text-white">
         <p className="font-luxe italic font-light tracking-[0.04em] text-hsq-gold text-4xl sm:text-5xl lg:text-6xl leading-none">
           Plan your escape
         </p>
-        <h2 className="mx-auto mt-2 max-w-2xl text-h2 text-white">
+        <h2 className="mx-auto mt-6 max-w-2xl text-h2 text-white">
           Begin Your Next Mountain Stay With Pinemont
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-body-lg text-white/80">
+        <p className="mx-auto mt-8 max-w-xl text-body-lg text-white/80">
           Placeholder closing copy. Anchor with a strong invitation and a single
           decisive call to action.
         </p>
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:mt-14 sm:flex-row sm:gap-4">
           <Button variant="primary" size="lg" href="#booking">Book Now</Button>
           <Button variant="outlineLight" size="lg" href="#location">Contact Concierge</Button>
         </div>

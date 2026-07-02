@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pinemont — Rooms Color Kit</title>
+  <link rel="icon" href="/brand/Logo-M-Transparent.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --pine: #173A2C;
+      --pine-mist: #2E5742;
+      --gold: #E89A2C;
+      --gold-champagne: #F7D28A;
+      --gold-bronze: #A66A1B;
+      --cream: #F4EDE3;
+      --snow: #FFFFFF;
+      --ink: #141414;
+      --graphite: #1B1B1D;
+      --slate: #4A4A4F;
+      --mute: #8A8780;
+      --gold-gradient: linear-gradient(135deg, #F7D28A 0%, #E89A2C 45%, #A66A1B 100%);
+      --dark-gradient: linear-gradient(135deg, #141414 0%, #1B1B1D 100%);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Poppins", system-ui, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.5;
+      padding-bottom: 6rem;
+    }
+    .page {
+      max-width: 1180px; margin: 0 auto; padding: 0 1.5rem;
+    }
+
+    /* ─── Hero ─── */
+    header.hero {
+      position: relative;
+      background: var(--dark-gradient);
+      color: var(--snow);
+      padding: 5rem 1.5rem 6rem;
+      overflow: hidden;
+    }
+    header.hero::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(215, 154, 44, 0.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    header.hero .brand-row {
+      display: flex; align-items: center; gap: 1rem;
+      max-width: 1180px; margin: 0 auto;
+      position: relative;
+    }
+    header.hero img.mark { height: 60px; width: auto; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4)); }
+    header.hero .eyebrow-line {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold-champagne);
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      max-width: 1180px; margin-left: auto; margin-right: auto;
+      position: relative;
+    }
+    header.hero h1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      margin-top: 0.5rem;
+      max-width: 1180px; margin-left: auto; margin-right: auto;
+      position: relative;
+    }
+    header.hero .subline {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.72);
+      margin-top: 1.25rem;
+      max-width: 720px;
+      margin-left: auto; margin-right: auto;
+      position: relative;
+    }
+    header.hero .nav {
+      display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+      margin-top: 2.5rem;
+      max-width: 1180px; margin-left: auto; margin-right: auto;
+      position: relative;
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    header.hero .nav a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    header.hero .nav a:hover { color: var(--gold-champagne); }
+
+    /* ─── Sections ─── */
+    section { margin-top: 4.5rem; }
+    .eyebrow {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    h2 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      color: var(--pine);
+      margin-top: 0.5rem;
+      max-width: 720px;
+    }
+    p.intro {
+      max-width: 640px;
+      color: var(--slate);
+      margin-top: 1rem;
+    }
+    .lead { margin-bottom: 2rem; }
+
+    /* ─── Room card ─── */
+    .room {
+      background: var(--snow);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 22px -10px rgba(20, 20, 20, 0.15),
+                  0 2px 6px rgba(20, 20, 20, 0.05);
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+    }
+    @media (min-width: 900px) {
+      .room { grid-template-columns: 1.15fr 1fr; }
+    }
+    .room .photo {
+      position: relative;
+      min-height: 260px;
+      background-size: cover;
+      background-position: center;
+    }
+    .room .photo::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.25) 100%);
+    }
+    .room .photo .filename {
+      position: absolute; left: 1rem; bottom: 0.9rem;
+      color: rgba(255,255,255,0.85);
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.02em;
+      z-index: 2;
+      background: rgba(0,0,0,0.4);
+      padding: 0.25rem 0.55rem;
+      border-radius: 5px;
+    }
+    .room .info {
+      padding: 1.75rem 1.75rem 2rem;
+      display: flex; flex-direction: column;
+    }
+    .room .info .type {
+      font-size: 0.7rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .room .info h3 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: var(--pine);
+      margin-top: 0.4rem;
+    }
+    .room .info p.mood {
+      margin-top: 0.65rem;
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--slate);
+      font-size: 1.05rem;
+      line-height: 1.45;
+    }
+    .swatch-strip {
+      margin-top: 1.4rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+      gap: 0.5rem;
+    }
+    .swatch-cell {
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--cream);
+      display: flex; flex-direction: column;
+      border: 1px solid rgba(20,20,20,0.05);
+    }
+    .swatch-cell .fill {
+      height: 62px;
+    }
+    .swatch-cell .label {
+      padding: 0.35rem 0.5rem 0.4rem;
+      font-size: 0.65rem;
+      color: var(--slate);
+      line-height: 1.25;
+    }
+    .swatch-cell .label b {
+      display: block;
+      color: var(--pine);
+      font-size: 0.7rem;
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    /* ─── Recurring palette ─── */
+    .recurring-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .rec-chip {
+      background: var(--snow);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px -6px rgba(20,20,20,0.14);
+    }
+    .rec-chip .fill { height: 110px; position: relative; }
+    .rec-chip .fill .times {
+      position: absolute; top: 0.6rem; right: 0.7rem;
+      background: rgba(0,0,0,0.35);
+      color: var(--snow);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+    }
+    .rec-chip .meta { padding: 0.85rem 1rem 1rem; }
+    .rec-chip .name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--pine);
+      display: flex; justify-content: space-between; align-items: baseline;
+    }
+    .rec-chip .hex {
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 0.7rem;
+      color: var(--slate);
+      background: var(--cream);
+      padding: 0.12rem 0.4rem;
+      border-radius: 4px;
+    }
+    .rec-chip .role {
+      font-size: 0.78rem;
+      color: var(--slate);
+      margin-top: 0.45rem;
+      line-height: 1.5;
+    }
+
+    /* ─── Bridge to brand ─── */
+    .bridge-table {
+      margin-top: 2rem;
+      background: var(--snow);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px -6px rgba(20,20,20,0.14);
+    }
+    .bridge-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(20,20,20,0.05);
+    }
+    .bridge-row:last-child { border-bottom: none; }
+    .bridge-side {
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .bridge-side .box {
+      width: 40px; height: 40px; border-radius: 8px;
+      border: 1px solid rgba(20,20,20,0.06);
+    }
+    .bridge-side .txt b {
+      display: block;
+      color: var(--pine);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .bridge-side .txt span {
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 0.72rem;
+      color: var(--slate);
+    }
+    .bridge-arrow {
+      color: var(--gold);
+      font-size: 1.4rem;
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    /* ─── Overlay recipes ─── */
+    .recipe-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .recipe {
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--snow);
+      box-shadow: 0 4px 14px -6px rgba(20,20,20,0.14);
+    }
+    .recipe .preview {
+      position: relative;
+      min-height: 220px;
+      background-size: cover; background-position: center;
+      display: flex; align-items: center; justify-content: center;
+      padding: 1.5rem;
+    }
+    .recipe .preview::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.55) 100%);
+    }
+    .recipe .card {
+      position: relative;
+      z-index: 2;
+      padding: 1.25rem 1.4rem;
+      border-radius: 12px;
+      max-width: 260px;
+    }
+    .recipe .body {
+      padding: 1.25rem 1.4rem 1.4rem;
+    }
+    .recipe .body h4 {
+      color: var(--pine);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .recipe .body p {
+      font-size: 0.82rem;
+      color: var(--slate);
+      line-height: 1.55;
+    }
+    .recipe .body code {
+      display: block;
+      margin-top: 0.7rem;
+      padding: 0.5rem 0.7rem;
+      background: var(--cream);
+      border-radius: 6px;
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 0.68rem;
+      color: var(--ink);
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    /* Card variants used in recipes */
+    .card.cream {
+      background: rgba(244, 237, 227, 0.94);
+      color: var(--pine);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 12px 30px -12px rgba(20,20,20,0.4);
+    }
+    .card.cream .kicker { color: var(--gold); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; }
+    .card.cream h5 { font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 300; font-size: 1.5rem; margin: 0.25rem 0 0.5rem; }
+    .card.cream p { font-size: 0.8rem; color: var(--slate); }
+    .card.cream button { margin-top: 0.9rem; background: var(--gold-gradient); color: var(--snow); border: none; padding: 0.5rem 1rem; border-radius: 999px; font-weight: 600; font-size: 0.75rem; }
+
+    .card.pine {
+      background: rgba(23, 58, 44, 0.86);
+      color: var(--cream);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 12px 30px -12px rgba(0,0,0,0.6);
+    }
+    .card.pine .kicker { color: var(--gold-champagne); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; }
+    .card.pine h5 { font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 300; font-size: 1.5rem; margin: 0.25rem 0 0.5rem; color: var(--snow); }
+    .card.pine p { font-size: 0.8rem; color: rgba(255,255,255,0.75); }
+    .card.pine button { margin-top: 0.9rem; background: var(--gold-gradient); color: var(--snow); border: none; padding: 0.5rem 1rem; border-radius: 999px; font-weight: 600; font-size: 0.75rem; }
+
+    .card.gold {
+      background: var(--gold-gradient);
+      color: var(--snow);
+      box-shadow: 0 12px 30px -12px rgba(215, 154, 44, 0.55);
+    }
+    .card.gold .kicker { color: rgba(255,255,255,0.85); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; }
+    .card.gold h5 { font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 300; font-size: 1.5rem; margin: 0.25rem 0 0.5rem; color: var(--snow); }
+    .card.gold p { font-size: 0.8rem; color: rgba(255,255,255,0.9); }
+    .card.gold button { margin-top: 0.9rem; background: rgba(20, 20, 20, 0.85); color: var(--snow); border: none; padding: 0.5rem 1rem; border-radius: 999px; font-weight: 600; font-size: 0.75rem; }
+
+    footer.foot {
+      margin-top: 5rem;
+      padding: 2rem 1.5rem;
+      background: var(--pine);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      font-size: 0.8125rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════ HERO ══════ -->
+<header class="hero">
+  <div class="brand-row">
+    <img class="mark" src="./brand/Logo-M-Transparent.png" alt="Pinemont mark" />
+  </div>
+  <p class="eyebrow-line">Design overlays that live inside</p>
+  <h1>The Pinemont Room Palette</h1>
+  <p class="subline">
+    Ten dominant tones read from six of the property's own photos —
+    the walls, the wood, the linens, the lamp glow. Use these when
+    you're placing a card, a button, or a shadow on top of a room
+    photo so the composition looks like it was designed *for* the
+    photograph, not stuck on top of it.
+  </p>
+  <nav class="nav">
+    <a href="#per-room">Per‑room breakdown</a>
+    <a href="#recurring">Recurring palette</a>
+    <a href="#bridge">Bridge to brand</a>
+    <a href="#recipes">Overlay recipes</a>
+    <a href="./brand-kit.html">← Brand kit</a>
+  </nav>
+</header>
+
+<!-- ══════ PER-ROOM ══════ -->
+<section id="per-room">
+  <div class="page">
+    <div class="lead">
+      <p class="eyebrow">01 · Per‑room breakdown</p>
+      <h2>Six photos, six palettes</h2>
+      <p class="intro">
+        For each room, the five to six colours a designer would sample
+        with an eyedropper — hex approximations read from the imagery.
+        Not lab‑calibrated; close enough for card, button, and shadow
+        decisions.
+      </p>
+    </div>
+
+    <!-- LOBBY 1 -->
+    <div class="room">
+      <div class="photo" style="background-image:url('./assets/806101287.jpg')">
+        <span class="filename">806101287.jpg</span>
+      </div>
+      <div class="info">
+        <p class="type">Lobby · Grand atrium</p>
+        <h3>Cream marble, gold pillar catches</h3>
+        <p class="mood">Warm daylight on polished stone — ambient amber light glows in soft ovals across the ceiling and floor.</p>
+        <div class="swatch-strip">
+          <div class="swatch-cell"><div class="fill" style="background:#EFE5CE"></div><div class="label"><b>#EFE5CE</b> Wall cream</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#E3D5BF"></div><div class="label"><b>#E3D5BF</b> Marble floor</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#B8935A"></div><div class="label"><b>#B8935A</b> Pillar gold</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#F5D9A8"></div><div class="label"><b>#F5D9A8</b> Lamp glow</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#3E3D42"></div><div class="label"><b>#3E3D42</b> Sofa charcoal</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#2E5A3B"></div><div class="label"><b>#2E5A3B</b> Plant green</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOBBY 2 -->
+    <div class="room">
+      <div class="photo" style="background-image:url('./assets/806101292.jpg')">
+        <span class="filename">806101292.jpg</span>
+      </div>
+      <div class="info">
+        <p class="type">Lobby · Double‑height atrium</p>
+        <h3>Cream + plants + dark stone reception</h3>
+        <p class="mood">Whiter, brighter cousin of 287 — more daylight, calmer palette, black‑stone reception counter anchors the far wall.</p>
+        <div class="swatch-strip">
+          <div class="swatch-cell"><div class="fill" style="background:#EEE3CE"></div><div class="label"><b>#EEE3CE</b> Wall cream</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#EDE2CC"></div><div class="label"><b>#EDE2CC</b> Floor</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#D8C4A5"></div><div class="label"><b>#D8C4A5</b> Pillar tan</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#4A6E3F"></div><div class="label"><b>#4A6E3F</b> Plant green</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#B39760"></div><div class="label"><b>#B39760</b> Pillar trim</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#3A2E28"></div><div class="label"><b>#3A2E28</b> Stone counter</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DELUXE PLUS -->
+    <div class="room">
+      <div class="photo" style="background-image:url('./assets/806104168.jpg')">
+        <span class="filename">806104168.jpg</span>
+      </div>
+      <div class="info">
+        <p class="type">Deluxe plus room</p>
+        <h3>Cream walls, slate curtains, honey walnut</h3>
+        <p class="mood">Cool grey slate curtains temper the warm cream and caramel wood — the coolest room in the set.</p>
+        <div class="swatch-strip">
+          <div class="swatch-cell"><div class="fill" style="background:#EFE5D0"></div><div class="label"><b>#EFE5D0</b> Wall cream</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#5C6B75"></div><div class="label"><b>#5C6B75</b> Slate curtain</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#A87B4D"></div><div class="label"><b>#A87B4D</b> Honey walnut</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#8E8477"></div><div class="label"><b>#8E8477</b> Sofa taupe</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#6D5946"></div><div class="label"><b>#6D5946</b> Bed brown</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#F1EBDE"></div><div class="label"><b>#F1EBDE</b> Bed linen</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STANDARD -->
+    <div class="room">
+      <div class="photo" style="background-image:url('./assets/806104177.jpg')">
+        <span class="filename">806104177.jpg</span>
+      </div>
+      <div class="info">
+        <p class="type">Standard room</p>
+        <h3>Chocolate headboard, aubergine throw</h3>
+        <p class="mood">The most contrast‑rich room — chocolate padded headboard, walnut panel, plum bedspread against pale walls.</p>
+        <div class="swatch-strip">
+          <div class="swatch-cell"><div class="fill" style="background:#EFE5D0"></div><div class="label"><b>#EFE5D0</b> Wall cream</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#402C1E"></div><div class="label"><b>#402C1E</b> Chocolate</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#7A5230"></div><div class="label"><b>#7A5230</b> Walnut</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#4F5257"></div><div class="label"><b>#4F5257</b> Slate</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#3A2A2A"></div><div class="label"><b>#3A2A2A</b> Aubergine</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#DCC9AC"></div><div class="label"><b>#DCC9AC</b> Rug beige</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRESIDENTIAL -->
+    <div class="room">
+      <div class="photo" style="background-image:url('./assets/806104198.jpg')">
+        <span class="filename">806104198.jpg</span>
+      </div>
+      <div class="info">
+        <p class="type">Presidential suite</p>
+        <h3>Navy headboard, gilt chairs, sienna floor</h3>
+        <p class="mood">The most tonally distinct room — deep navy headboard, baroque gold chairs, sienna terracotta floor. Warmest read of the set.</p>
+        <div class="swatch-strip">
+          <div class="swatch-cell"><div class="fill" style="background:#F2E8D2"></div><div class="label"><b>#F2E8D2</b> Wall cream</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#1A1F2E"></div><div class="label"><b>#1A1F2E</b> Navy headboard</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#C8A45E"></div><div class="label"><b>#C8A45E</b> Gilt gold</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#8E5F30"></div><div class="label"><b>#8E5F30</b> Walnut post</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#C7BAA0"></div><div class="label"><b>#C7BAA0</b> Sandy curtain</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#8E5E3B"></div><div class="label"><b>#8E5E3B</b> Sienna floor</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAMILY -->
+    <div class="room">
+      <div class="photo" style="background-image:url('./assets/806108126.jpg')">
+        <span class="filename">806108126.jpg</span>
+      </div>
+      <div class="info">
+        <p class="type">Family / executive room</p>
+        <h3>Navy headboards, rust orange velvet chair</h3>
+        <p class="mood">The most social palette — navy anchors, warm cream, honey wood, and a rust‑orange velvet accent chair that echoes brand gold.</p>
+        <div class="swatch-strip">
+          <div class="swatch-cell"><div class="fill" style="background:#F1E8D6"></div><div class="label"><b>#F1E8D6</b> Wall cream</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#1A2035"></div><div class="label"><b>#1A2035</b> Navy headboard</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#8B5F32"></div><div class="label"><b>#8B5F32</b> Honey walnut</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#B95B32"></div><div class="label"><b>#B95B32</b> Rust velvet</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#2C3846"></div><div class="label"><b>#2C3846</b> Navy curtain</div></div>
+          <div class="swatch-cell"><div class="fill" style="background:#D89A5B"></div><div class="label"><b>#D89A5B</b> Lamp amber</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ RECURRING ══════ -->
+<section id="recurring">
+  <div class="page">
+    <div class="lead">
+      <p class="eyebrow">02 · The recurring palette</p>
+      <h2>What actually shows up across all six rooms</h2>
+      <p class="intro">
+        Colours that appeared in three or more of the reference photos.
+        These are the safe defaults for any card, button, or shadow you
+        place on a Pinemont room photo — they'll always feel harmonious
+        because they came from the room to begin with.
+      </p>
+    </div>
+
+    <div class="recurring-grid">
+      <div class="rec-chip">
+        <div class="fill" style="background:#EEE3CE;"><span class="times">6 / 6</span></div>
+        <div class="meta">
+          <div class="name">Wall Cream <span class="hex">#EEE3CE</span></div>
+          <p class="role">The wall colour of every room. Use as card background, print stock, or as a 92% overlay on any interior photo.</p>
+        </div>
+      </div>
+      <div class="rec-chip">
+        <div class="fill" style="background:#8E5F30;"><span class="times">5 / 6</span></div>
+        <div class="meta">
+          <div class="name">Walnut Wood <span class="hex">#8E5F30</span></div>
+          <p class="role">TV panels, bed posts, side tables. The warm brown that recurs behind every headboard.</p>
+        </div>
+      </div>
+      <div class="rec-chip">
+        <div class="fill" style="background:#1A2035;"><span class="times">3 / 6</span></div>
+        <div class="meta">
+          <div class="name">Navy Headboard <span class="hex">#1A2035</span></div>
+          <p class="role">Deep padded headboards. A cool anchor that pairs beautifully with cream + gold.</p>
+        </div>
+      </div>
+      <div class="rec-chip">
+        <div class="fill" style="background:#D89A5B;"><span class="times">4 / 6</span></div>
+        <div class="meta">
+          <div class="name">Lamp Amber <span class="hex">#D89A5B</span></div>
+          <p class="role">The warm glow from wall sconces on cream. Effectively "Pinemont Gold weathered by lamplight."</p>
+        </div>
+      </div>
+      <div class="rec-chip">
+        <div class="fill" style="background:#E3D5BF;"><span class="times">4 / 6</span></div>
+        <div class="meta">
+          <div class="name">Floor Beige <span class="hex">#E3D5BF</span></div>
+          <p class="role">Marble &amp; rug base tone. Lighter warm neutral for large surface backgrounds.</p>
+        </div>
+      </div>
+      <div class="rec-chip">
+        <div class="fill" style="background:#4F5B6A;"><span class="times">3 / 6</span></div>
+        <div class="meta">
+          <div class="name">Slate Curtain <span class="hex">#4F5B6A</span></div>
+          <p class="role">The one cool tone that recurs. Use sparingly for balance — don't lead with it.</p>
+        </div>
+      </div>
+      <div class="rec-chip">
+        <div class="fill" style="background:#B95B32;"><span class="times">2 / 6</span></div>
+        <div class="meta">
+          <div class="name">Rust Accent <span class="hex">#B95B32</span></div>
+          <p class="role">Velvet chairs, orange upholstery. A warm "pop" that echoes brand gold from the same family.</p>
+        </div>
+      </div>
+      <div class="rec-chip">
+        <div class="fill" style="background:#F5EEDD;"><span class="times">6 / 6</span></div>
+        <div class="meta">
+          <div class="name">Linen White <span class="hex">#F5EEDD</span></div>
+          <p class="role">Bedsheets — always slightly warmer than pure white. Use for text on dark overlays.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ BRIDGE TO BRAND ══════ -->
+<section id="bridge">
+  <div class="page">
+    <div class="lead">
+      <p class="eyebrow">03 · Bridge to brand</p>
+      <h2>Room colours ↔ brand tokens</h2>
+      <p class="intro">
+        The recurring room palette maps almost cleanly onto the brand
+        palette — which is why photos and marketing already feel like
+        the same property. Here's the mapping so you can substitute
+        confidently.
+      </p>
+    </div>
+
+    <div class="bridge-table">
+      <div class="bridge-row">
+        <div class="bridge-side">
+          <span class="box" style="background:#EEE3CE"></span>
+          <div class="txt"><b>Wall Cream</b><span>#EEE3CE</span></div>
+        </div>
+        <span class="bridge-arrow">→</span>
+        <div class="bridge-side">
+          <span class="box" style="background:#F4EDE3"></span>
+          <div class="txt"><b>Brand Cream</b><span>#F4EDE3</span></div>
+        </div>
+      </div>
+      <div class="bridge-row">
+        <div class="bridge-side">
+          <span class="box" style="background:#D89A5B"></span>
+          <div class="txt"><b>Lamp Amber</b><span>#D89A5B</span></div>
+        </div>
+        <span class="bridge-arrow">→</span>
+        <div class="bridge-side">
+          <span class="box" style="background:#E89A2C"></span>
+          <div class="txt"><b>Pinemont Gold</b><span>#E89A2C</span></div>
+        </div>
+      </div>
+      <div class="bridge-row">
+        <div class="bridge-side">
+          <span class="box" style="background:#8E5F30"></span>
+          <div class="txt"><b>Walnut Wood</b><span>#8E5F30</span></div>
+        </div>
+        <span class="bridge-arrow">→</span>
+        <div class="bridge-side">
+          <span class="box" style="background:#A66A1B"></span>
+          <div class="txt"><b>Bronze Shadow</b><span>#A66A1B</span></div>
+        </div>
+      </div>
+      <div class="bridge-row">
+        <div class="bridge-side">
+          <span class="box" style="background:#1A2035"></span>
+          <div class="txt"><b>Navy Headboard</b><span>#1A2035</span></div>
+        </div>
+        <span class="bridge-arrow">→</span>
+        <div class="bridge-side">
+          <span class="box" style="background:#141414"></span>
+          <div class="txt"><b>Ink Black</b><span>#141414</span></div>
+        </div>
+      </div>
+      <div class="bridge-row">
+        <div class="bridge-side">
+          <span class="box" style="background:#2E5A3B"></span>
+          <div class="txt"><b>Lobby Plants</b><span>#2E5A3B</span></div>
+        </div>
+        <span class="bridge-arrow">→</span>
+        <div class="bridge-side">
+          <span class="box" style="background:#173A2C"></span>
+          <div class="txt"><b>Pinemont Pine</b><span>#173A2C</span></div>
+        </div>
+      </div>
+      <div class="bridge-row">
+        <div class="bridge-side">
+          <span class="box" style="background:#F5EEDD"></span>
+          <div class="txt"><b>Linen White</b><span>#F5EEDD</span></div>
+        </div>
+        <span class="bridge-arrow">→</span>
+        <div class="bridge-side">
+          <span class="box" style="background:#FFFFFF; border:1px solid rgba(20,20,20,0.08);"></span>
+          <div class="txt"><b>Snow</b><span>#FFFFFF</span></div>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:1.5rem; font-size:0.95rem; color:var(--slate); max-width:640px; line-height:1.6;">
+      <b style="color:var(--pine);">The takeaway:</b> when you use brand
+      tokens on top of room photos, you're not "pasting brand onto
+      photo" — you're echoing what's already in the photo. That's why
+      the composition reads as intentional. The one gap is the cool
+      slate curtain and the navy headboard — the brand has no direct
+      equivalent, so use them as supporting colour only, never as CTA
+      or headline colour.
+    </p>
+  </div>
+</section>
+
+<!-- ══════ OVERLAY RECIPES ══════ -->
+<section id="recipes">
+  <div class="page">
+    <div class="lead">
+      <p class="eyebrow">04 · Overlay recipes</p>
+      <h2>Cards, buttons &amp; shadows that live on room photos</h2>
+      <p class="intro">
+        Three tested overlay patterns. Each shown at real size, on top
+        of a real room photo, with the CSS pasted below. Copy the
+        recipe into Canva as a solid‑fill card and it will hold.
+      </p>
+    </div>
+
+    <div class="recipe-grid">
+      <div class="recipe">
+        <div class="preview" style="background-image:url('./assets/806104198.jpg')">
+          <div class="card cream">
+            <p class="kicker">Presidential suite</p>
+            <h5>The room where the day slows down.</h5>
+            <p>Deep navy headboard, gilt seating, and a valley view through the curtains.</p>
+            <button>Reserve</button>
+          </div>
+        </div>
+        <div class="body">
+          <h4>Cream card on interior photo</h4>
+          <p>The daylight overlay — reads as a magazine caption. Use when the photo already carries the mood; the card just adds copy.</p>
+          <code>background: rgba(244, 237, 227, 0.94);
+color: #173A2C;
+backdrop-filter: blur(6px);
+box-shadow: 0 12px 30px -12px rgba(20,20,20,0.4);
+border-radius: 12px;</code>
+        </div>
+      </div>
+
+      <div class="recipe">
+        <div class="preview" style="background-image:url('./assets/806104177.jpg')">
+          <div class="card pine">
+            <p class="kicker">Standard room</p>
+            <h5>A quieter kind of comfort.</h5>
+            <p>Warm walnut, aubergine linens, and rooftop light through the drapes.</p>
+            <button>Explore</button>
+          </div>
+        </div>
+        <div class="body">
+          <h4>Pine card on interior photo</h4>
+          <p>The evening overlay — reads as a boutique poster. Best on rooms with mid‑tone or contrast‑rich photos. The gold button stays the CTA anchor.</p>
+          <code>background: rgba(23, 58, 44, 0.86);
+color: #F4EDE3;
+backdrop-filter: blur(6px);
+box-shadow: 0 12px 30px -12px rgba(0,0,0,0.6);
+border-radius: 12px;</code>
+        </div>
+      </div>
+
+      <div class="recipe">
+        <div class="preview" style="background-image:url('./assets/806108126.jpg')">
+          <div class="card gold">
+            <p class="kicker">Family suite</p>
+            <h5>Two beds, one view.</h5>
+            <p>Warm cream, navy anchors, rust velvet — a room for slow weekends.</p>
+            <button>Book</button>
+          </div>
+        </div>
+        <div class="body">
+          <h4>Gold gradient card on interior photo</h4>
+          <p>The scroll‑stopping overlay — reserve for offers or seasonal spotlights. Use dark button so the eye doesn't drown in warmth.</p>
+          <code>background: linear-gradient(135deg,#F7D28A 0%,#E89A2C 45%,#A66A1B 100%);
+color: #FFFFFF;
+box-shadow: 0 12px 30px -12px rgba(215,154,44,0.55);
+border-radius: 12px;</code>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:2rem; padding:1.5rem; background:var(--snow); border-radius:12px; box-shadow:0 4px 14px -6px rgba(20,20,20,0.14);">
+      <h3 style="color:var(--pine); font-size:1rem; margin-bottom:0.75rem;">Shadow recipe for cards on photos</h3>
+      <p style="font-size:0.9rem; color:var(--slate); line-height:1.6;">
+        Photo backgrounds are visually noisy — a soft flat shadow on a card
+        gets lost. Use a longer, deeper shadow with slight warm tint so the
+        card lifts:
+      </p>
+      <code style="display:block; margin-top:0.7rem; padding:0.7rem 0.9rem; background:var(--cream); border-radius:6px; font-family:ui-monospace,monospace; font-size:0.72rem; color:var(--ink); line-height:1.55;">box-shadow:
+  0 18px 40px -14px rgba(23, 58, 44, 0.55),
+  0 4px 10px -4px rgba(20, 20, 20, 0.20);</code>
+      <p style="font-size:0.82rem; color:var(--mute); margin-top:0.6rem;">
+        First stop is a deep pine‑tinted long throw (feels grounded);
+        second stop is a tight ink stop (defines the card edge).
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  Pinemont Rooms Color Kit · Companion to <a href="./brand-kit.html" style="color:var(--gold-champagne);">brand‑kit.html</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pinemont — Brand Kit v2 Audit</title>
+  <link rel="icon" href="/brand/Logo-M-Transparent.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --pine: #173A2C;
+      --pine-deep: #0F2A20;
+      --gold-signal: #E89A2C;
+      --gold-foil: #C8A45E;
+      --gold-champagne: #F7D28A;
+      --gold-bronze: #A66A1B;
+      --cream-brand: #F4EDE3;
+      --cream-warm: #EFE7D2;
+      --linen: #F5EEDD;
+      --snow: #FFFFFF;
+      --navy: #1A2035;
+      --ink: #141414;
+      --ink-warm: #1A1512;
+      --slate: #4A4A4F;
+      --mute: #8A8780;
+      --rust: #B95B32;
+      --amber: #D89A5B;
+      --danger: #C0392B;
+      --gold-gradient: linear-gradient(135deg, #F7D28A 0%, #E89A2C 45%, #A66A1B 100%);
+      --foil-gradient: linear-gradient(135deg, #E9D8AE 0%, #C8A45E 45%, #8E6F30 100%);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Poppins", system-ui, sans-serif;
+      background: var(--cream-brand);
+      color: var(--ink);
+      line-height: 1.55;
+      padding-bottom: 6rem;
+    }
+    .page { max-width: 1180px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ─── Hero ─── */
+    header.hero {
+      position: relative;
+      background: linear-gradient(135deg, #0F2A20 0%, #141414 100%);
+      color: var(--snow);
+      padding: 4.5rem 1.5rem 5rem;
+      overflow: hidden;
+    }
+    header.hero::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 45% at 20% 100%, rgba(200, 164, 94, 0.22) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    header.hero .row { position: relative; max-width: 1180px; margin: 0 auto; }
+    header.hero .mark-row { display: flex; align-items: center; gap: 1rem; }
+    header.hero img.mark { height: 54px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4)); }
+    header.hero .stamp {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      background: rgba(192, 57, 43, 0.85);
+      border-radius: 4px;
+      color: var(--snow);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    header.hero .eyebrow-line {
+      font-family: "Fraunces", "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold-foil);
+      font-size: 1.5rem;
+      margin-top: 2.25rem;
+    }
+    header.hero h1 {
+      font-family: "Fraunces", "Poppins", sans-serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: clamp(2.25rem, 5vw, 3.5rem);
+      letter-spacing: -0.015em;
+      line-height: 1.05;
+      margin-top: 0.4rem;
+      max-width: 900px;
+    }
+    header.hero .subline {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.75);
+      margin-top: 1.25rem;
+      max-width: 640px;
+      line-height: 1.65;
+    }
+    header.hero .nav {
+      display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+      margin-top: 2.25rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    header.hero .nav a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+    }
+    header.hero .nav a:hover { color: var(--gold-champagne); }
+
+    /* ─── Section frame ─── */
+    section { margin-top: 4rem; }
+    .lead { margin-bottom: 1.75rem; }
+    .eyebrow {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold-signal);
+    }
+    h2 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.55rem, 2.75vw, 2rem);
+      color: var(--pine);
+      margin-top: 0.4rem;
+      max-width: 780px;
+    }
+    p.intro {
+      max-width: 680px;
+      color: var(--slate);
+      margin-top: 0.9rem;
+    }
+    h3 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--pine);
+    }
+    h4 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--pine);
+      letter-spacing: 0.02em;
+    }
+
+    /* ─── TL;DR verdict grid ─── */
+    .verdict-grid {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .verdict {
+      background: var(--snow);
+      border-radius: 12px;
+      padding: 1.1rem 1.2rem 1.15rem;
+      box-shadow: 0 4px 14px -6px rgba(20,20,20,0.14);
+      border-left: 4px solid;
+      display: flex; flex-direction: column; gap: 0.4rem;
+    }
+    .verdict.crit { border-color: var(--danger); }
+    .verdict.high { border-color: var(--gold-signal); }
+    .verdict.med  { border-color: var(--gold-foil); }
+    .verdict .tag {
+      font-size: 0.62rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .verdict.crit .tag { color: var(--danger); }
+    .verdict.high .tag { color: var(--gold-bronze); }
+    .verdict.med  .tag { color: var(--gold-foil); }
+    .verdict h4 { line-height: 1.35; }
+    .verdict p {
+      font-size: 0.8rem;
+      color: var(--slate);
+      line-height: 1.55;
+    }
+
+    /* ─── Finding block ─── */
+    .finding {
+      background: var(--snow);
+      border-radius: 16px;
+      padding: 1.75rem;
+      margin-top: 1.75rem;
+      box-shadow: 0 6px 20px -10px rgba(20,20,20,0.15);
+    }
+    .finding-head { display: flex; align-items: baseline; gap: 0.9rem; flex-wrap: wrap; }
+    .finding-head .num {
+      font-family: "Fraunces", serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold-foil);
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+    .finding-head h3 {
+      font-size: 1.25rem;
+      color: var(--pine);
+      max-width: 720px;
+      line-height: 1.3;
+    }
+    .finding-head .sev {
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+    }
+    .finding-head .sev.crit { background: rgba(192,57,43,0.15); color: var(--danger); }
+    .finding-head .sev.high { background: rgba(232,154,44,0.18); color: var(--gold-bronze); }
+    .finding-head .sev.med  { background: rgba(200,164,94,0.18); color: var(--gold-bronze); }
+
+    .finding p.body {
+      color: var(--slate);
+      font-size: 0.92rem;
+      max-width: 720px;
+      margin-top: 0.85rem;
+    }
+    .finding p.body b { color: var(--pine); }
+    .finding .demo {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .swatch-block {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(20,20,20,0.06);
+      background: var(--snow);
+    }
+    .swatch-block .fill { height: 90px; display: flex; align-items: flex-end; padding: 0.6rem 0.8rem; }
+    .swatch-block .fill .cap {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .swatch-block .meta {
+      padding: 0.55rem 0.8rem 0.75rem;
+      font-size: 0.72rem;
+      color: var(--slate);
+    }
+    .swatch-block .meta b {
+      display: block;
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-weight: 500;
+      color: var(--pine);
+      font-size: 0.75rem;
+    }
+    .swatch-block .meta .ratio {
+      display: inline-block;
+      margin-top: 0.25rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.65rem;
+      font-family: ui-monospace, monospace;
+      background: var(--cream-brand);
+    }
+    .swatch-block .meta .ratio.fail { background: rgba(192,57,43,0.15); color: var(--danger); }
+    .swatch-block .meta .ratio.aa   { background: rgba(46,125,79,0.15); color: #2E7D4F; }
+    .swatch-block .meta .ratio.large { background: rgba(232,154,44,0.15); color: var(--gold-bronze); }
+
+    .verdict-row {
+      margin-top: 1.2rem;
+      display: grid;
+      gap: 0.8rem;
+      grid-template-columns: 1fr;
+      background: var(--cream-brand);
+      border-radius: 10px;
+      padding: 1rem 1.15rem;
+      border-left: 3px solid var(--pine);
+    }
+    .verdict-row h4 {
+      color: var(--pine);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .verdict-row p {
+      font-size: 0.9rem;
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    .verdict-row p b { color: var(--pine); }
+
+    /* ─── Type comparison for finding 6 ─── */
+    .type-compare {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+    @media (min-width: 800px) { .type-compare { grid-template-columns: 1fr 1fr; } }
+    .type-compare > div {
+      padding: 1.5rem 1.75rem;
+      border-radius: 10px;
+      background: var(--cream-brand);
+    }
+    .type-compare .tag {
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--slate);
+    }
+    .type-compare .poppins-800 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 800;
+      font-size: 2.5rem;
+      letter-spacing: -0.02em;
+      color: var(--pine);
+      margin-top: 0.5rem;
+      line-height: 1;
+    }
+    .type-compare .fraunces {
+      font-family: "Fraunces", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 2.75rem;
+      color: var(--pine);
+      margin-top: 0.5rem;
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+    .type-compare .caption {
+      margin-top: 0.6rem;
+      font-size: 0.78rem;
+      color: var(--slate);
+    }
+
+    /* ─── V3 palette proposal ─── */
+    .v3-hero {
+      margin-top: 2rem;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #0F2A20 0%, #173A2C 100%);
+      padding: 2.5rem 2rem;
+      color: var(--snow);
+      overflow: hidden;
+      position: relative;
+    }
+    .v3-hero::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 45% at 80% 30%, rgba(200, 164, 94, 0.22) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .v3-hero .kicker {
+      font-size: 0.7rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--gold-foil);
+      position: relative;
+    }
+    .v3-hero h3 {
+      font-family: "Fraunces", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      color: var(--snow);
+      max-width: 720px;
+      margin-top: 0.4rem;
+      position: relative;
+      line-height: 1.2;
+    }
+    .v3-hero p {
+      max-width: 660px;
+      margin-top: 0.9rem;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.6;
+      position: relative;
+    }
+
+    .v3-group {
+      margin-top: 1.5rem;
+      background: var(--snow);
+      border-radius: 14px;
+      padding: 1.5rem 1.75rem 1.75rem;
+      box-shadow: 0 4px 14px -6px rgba(20,20,20,0.13);
+    }
+    .v3-group .glabel {
+      font-size: 0.7rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--gold-signal);
+    }
+    .v3-group h3 {
+      font-size: 1.05rem;
+      color: var(--pine);
+      margin-top: 0.35rem;
+      margin-bottom: 0.9rem;
+    }
+    .v3-chips {
+      display: grid;
+      gap: 0.85rem;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+    .v3-chip {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(20,20,20,0.05);
+      background: var(--cream-brand);
+    }
+    .v3-chip .fill {
+      height: 74px;
+      position: relative;
+    }
+    .v3-chip .fill.gradient-foil { background: var(--foil-gradient); }
+    .v3-chip .fill.gradient-signal { background: var(--gold-gradient); }
+    .v3-chip .fill .newbadge {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.55rem;
+      background: rgba(20,20,20,0.85);
+      color: var(--gold-champagne);
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .v3-chip .fill .keepbadge {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.55rem;
+      background: rgba(255,255,255,0.85);
+      color: var(--pine);
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .v3-chip .meta {
+      padding: 0.55rem 0.75rem 0.7rem;
+      font-size: 0.72rem;
+      color: var(--slate);
+    }
+    .v3-chip .meta b {
+      display: block;
+      color: var(--pine);
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+    .v3-chip .meta span {
+      font-family: ui-monospace, monospace;
+      font-size: 0.68rem;
+    }
+    .v3-chip .meta em {
+      display: block;
+      margin-top: 0.28rem;
+      font-style: normal;
+      font-size: 0.72rem;
+      color: var(--slate);
+      line-height: 1.4;
+    }
+
+    /* ─── Footer ─── */
+    footer.foot {
+      margin-top: 5rem;
+      padding: 2rem 1.5rem;
+      background: var(--pine);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      font-size: 0.82rem;
+      line-height: 1.7;
+    }
+    footer.foot a { color: var(--gold-champagne); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- ══════ HERO ══════ -->
+<header class="hero">
+  <div class="row">
+    <div class="mark-row">
+      <img class="mark" src="./brand/Logo-M-Transparent.png" alt="Pinemont mark" />
+      <span class="stamp">Audit · Draft · Not yet ratified</span>
+    </div>
+    <p class="eyebrow-line">A raw, expert‑level second opinion on</p>
+    <h1>Brand Kit v2 — six things a luxury‑hospitality<br/>brand consultant would flag</h1>
+    <p class="subline">
+      This audit was written after room‑kit sampling revealed how the property
+      actually looks. It is deliberately opinionated. It uses colour science,
+      WCAG contrast maths, and luxury‑hotel branding practice as its lens —
+      not what looked pretty in earlier drafts. Six findings, one recommended
+      v3 palette. Then you decide.
+    </p>
+    <nav class="nav">
+      <a href="#tldr">TL;DR</a>
+      <a href="#f1">01 Gold is orange</a>
+      <a href="#f2">02 Navy is missing</a>
+      <a href="#f3">03 Cream mismatch</a>
+      <a href="#f4">04 Contrast fails</a>
+      <a href="#f5">05 Ink ≈ Graphite</a>
+      <a href="#f6">06 Poppins 800</a>
+      <a href="#v3">Proposed v3</a>
+      <a href="./brand-kit.html">← Current kit</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════ TL;DR ══════ -->
+<section id="tldr">
+  <div class="page">
+    <div class="lead">
+      <p class="eyebrow">The verdict at a glance</p>
+      <h2>What v2 gets right — and where it drifts from luxury</h2>
+      <p class="intro">
+        v2's structure is sound: two logos, one accent typeface, one workhorse,
+        a codified gold gradient. The problems are in the specific hex values,
+        the missing anchors that the property's own rooms already contain,
+        and the accessibility of the current gold on light surfaces. Read
+        the six cards below in order — each has evidence, colour math, and
+        one recommendation.
+      </p>
+    </div>
+
+    <div class="verdict-grid">
+      <div class="verdict crit">
+        <span class="tag">Critical</span>
+        <h4>Gold reads orange, not metallic</h4>
+        <p>#E89A2C sits at 34° hue, 80% saturation — that's marigold territory. The Presidential suite's own gilt gold is #C8A45E and reads more "gold." Split into Signal + Foil.</p>
+      </div>
+      <div class="verdict crit">
+        <span class="tag">Critical</span>
+        <h4>Gold on cream fails WCAG</h4>
+        <p>#E89A2C on Cream #F4EDE3 = 2.0:1. Fails AA even at large‑text. Currently used for eyebrows. Switch eyebrows to Bronze or Pine on light.</p>
+      </div>
+      <div class="verdict high">
+        <span class="tag">High</span>
+        <h4>Navy anchor missing</h4>
+        <p>3 of 6 rooms carry #1A2035 navy headboards. v2 has no navy — it tries to force Ink Black as substitute, but ink is neutral cool. Adopt Navy Anchor.</p>
+      </div>
+      <div class="verdict high">
+        <span class="tag">High</span>
+        <h4>Brand cream is colder than room cream</h4>
+        <p>#F4EDE3 vs the rooms' recurring #EEE3CE — 5° hue apart, 3 L* apart. Small on paper, but photos next to brand cream will read slightly clinical.</p>
+      </div>
+      <div class="verdict med">
+        <span class="tag">Medium</span>
+        <h4>Ink and Graphite are the same colour</h4>
+        <p>#141414 and #1B1B1D differ by 4 L* — invisible to most eyes. Either merge, or make Graphite a warm dark that distinguishes itself.</p>
+      </div>
+      <div class="verdict med">
+        <span class="tag">Medium</span>
+        <h4>Poppins 800 is not luxury</h4>
+        <p>Weight 800 reads promo/startup. Real luxury hospitality caps at 500–600 sans + a serif italic for editorial. Consider Fraunces italic for display.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FINDING 01 ══════ -->
+<section id="f1">
+  <div class="page">
+    <div class="finding">
+      <div class="finding-head">
+        <span class="num">01</span>
+        <h3>The gold reads as saturated orange, not metallic gold</h3>
+        <span class="sev crit">Critical</span>
+      </div>
+      <p class="body">
+        <b>Colour math.</b> The current Pinemont Gold #E89A2C sits at HSL
+        34°, 80%, 54% — a marigold‑paint hue. True metallic gold on print
+        or foil reads amber‑tan: lower saturation, higher yellow content,
+        closer to HSL 40°, 45%, 58%. The rooms‑kit already surfaces the
+        proof: the Presidential suite's gilded chair is <b>#C8A45E</b>
+        (foil‑style gold) and the lobby's brass pillar is <b>#B8935A</b>.
+        Both read distinctly more "gold" than the brand token, because
+        they're desaturated the way real gilt is.
+      </p>
+      <p class="body">
+        <b>Consequence.</b> Sit brand Gold #E89A2C next to any room photo and
+        the brand token looks hot; the property looks calm. That contrast
+        makes ads and social posts feel bolted‑on rather than pulled from
+        the property.
+      </p>
+      <div class="demo">
+        <div class="swatch-block">
+          <div class="fill" style="background:#E89A2C;">
+            <span class="cap" style="color:#fff;">Brand Gold — v2</span>
+          </div>
+          <div class="meta">
+            <b>#E89A2C</b>
+            HSL 34° · 80% · 54% — reads marigold
+          </div>
+        </div>
+        <div class="swatch-block">
+          <div class="fill" style="background:#C8A45E;">
+            <span class="cap" style="color:#fff;">Room Gilt — Presidential</span>
+          </div>
+          <div class="meta">
+            <b>#C8A45E</b>
+            HSL 39° · 50% · 58% — reads foil
+          </div>
+        </div>
+        <div class="swatch-block">
+          <div class="fill" style="background:#B8935A;">
+            <span class="cap" style="color:#fff;">Pillar — Lobby atrium</span>
+          </div>
+          <div class="meta">
+            <b>#B8935A</b>
+            HSL 36° · 39% · 54% — reads brass
+          </div>
+        </div>
+      </div>
+      <div class="verdict-row">
+        <h4>Recommendation</h4>
+        <p>
+          Keep #E89A2C but <b>rename it "Signal Gold"</b> and demote it to
+          CTA/link duty only (where its saturation earns attention). Add a
+          new primary token <b>Foil Gold #C8A45E</b> for hero panels, print
+          collateral, embossed foil, and any large gold surface. Rebuild
+          the gradient with foil stops for luxury applications
+          (`#E9D8AE → #C8A45E → #8E6F30`) while keeping the current
+          "signal" gradient for buttons and web CTAs.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FINDING 02 ══════ -->
+<section id="f2">
+  <div class="page">
+    <div class="finding">
+      <div class="finding-head">
+        <span class="num">02</span>
+        <h3>The brand palette has no navy — the property does</h3>
+        <span class="sev high">High</span>
+      </div>
+      <p class="body">
+        <b>Evidence from the rooms.</b> Three of six sampled rooms carry a
+        deep navy as a structural anchor: the Deluxe Plus slate curtains
+        (#5C6B75), the Presidential headboard (#1A1F2E), and the Family
+        room headboard (#1A2035). This is not a minor prop — it's the
+        colour under which guests literally sleep.
+      </p>
+      <p class="body">
+        <b>The v2 workaround doesn't hold.</b> The current bridge maps
+        this navy onto Ink Black #141414. But Ink is neutral cool grey
+        (~0° saturation); navy has clear blue chroma. Placing brand Ink
+        into an overlay next to a navy headboard reads flat and dead —
+        the two blacks visibly don't match. A brand that ignores a
+        recurring structural room colour will always look pasted on top
+        of its own property.
+      </p>
+      <div class="demo">
+        <div class="swatch-block">
+          <div class="fill" style="background:#141414;">
+            <span class="cap" style="color:#fff;">v2 Ink Black</span>
+          </div>
+          <div class="meta"><b>#141414</b> HSL 0° · 0% · 8% — neutral</div>
+        </div>
+        <div class="swatch-block">
+          <div class="fill" style="background:#1A2035;">
+            <span class="cap" style="color:#fff;">Room Navy — Family suite</span>
+          </div>
+          <div class="meta"><b>#1A2035</b> HSL 226° · 34% · 15% — cool blue</div>
+        </div>
+        <div class="swatch-block">
+          <div class="fill" style="background:#1A1F2E;">
+            <span class="cap" style="color:#fff;">Room Navy — Presidential</span>
+          </div>
+          <div class="meta"><b>#1A1F2E</b> HSL 224° · 27% · 14% — cool blue</div>
+        </div>
+      </div>
+      <div class="verdict-row">
+        <h4>Recommendation</h4>
+        <p>
+          Add <b>Navy Anchor #1A2035</b> as a supporting primary. Use it as
+          the dark‑mode surface for any card that will sit on a room photo,
+          for premium print stock, and for anchoring the "night" version of
+          the brand (evening events, valentine's, winter). Retire Ink Black
+          from the palette or demote it to a text‑only token.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FINDING 03 ══════ -->
+<section id="f3">
+  <div class="page">
+    <div class="finding">
+      <div class="finding-head">
+        <span class="num">03</span>
+        <h3>Brand cream is cooler and lighter than the walls of the hotel</h3>
+        <span class="sev high">High</span>
+      </div>
+      <p class="body">
+        <b>Colour math.</b> Brand Cream #F4EDE3 sits at HSL 35°, 38%, 92%.
+        The wall paint of every single room sampled sits at HSL 40°, 44%,
+        89% — <b>five degrees warmer, three L* darker</b>. That is small
+        on paper. It is <i>immediately visible</i> in composition: the
+        brand cream reads slightly grey / clinical next to any warm room
+        photo.
+      </p>
+      <p class="body">
+        For a "great reputation luxury hotel" the cream needs to feel like
+        the room — the surface guests remember waking up on. Not a cooler
+        cousin.
+      </p>
+      <div class="demo">
+        <div class="swatch-block">
+          <div class="fill" style="background:#F4EDE3;">
+            <span class="cap" style="color:#173A2C;">v2 Brand Cream</span>
+          </div>
+          <div class="meta"><b>#F4EDE3</b> HSL 35° · 38% · 92%</div>
+        </div>
+        <div class="swatch-block">
+          <div class="fill" style="background:#EEE3CE;">
+            <span class="cap" style="color:#173A2C;">Room Wall Cream (6/6 rooms)</span>
+          </div>
+          <div class="meta"><b>#EEE3CE</b> HSL 40° · 42% · 87%</div>
+        </div>
+        <div class="swatch-block">
+          <div class="fill" style="background:#EFE7D2;">
+            <span class="cap" style="color:#173A2C;">Proposed Warm Cream</span>
+          </div>
+          <div class="meta"><b>#EFE7D2</b> HSL 41° · 44% · 88% — property‑aligned</div>
+        </div>
+      </div>
+      <div class="verdict-row">
+        <h4>Recommendation</h4>
+        <p>
+          Retune brand Cream to <b>#EFE7D2</b> (proposed "Warm Cream").
+          It's within 3% ΔE of the actual room wall paint, so on‑screen it
+          reads as an extension of the property. Also add <b>Linen
+          #F5EEDD</b> as the "text‑on‑photo" white — never pure #FFFFFF
+          over a warm room shot, always Linen.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FINDING 04 ══════ -->
+<section id="f4">
+  <div class="page">
+    <div class="finding">
+      <div class="finding-head">
+        <span class="num">04</span>
+        <h3>The gold fails accessibility on every light surface it touches</h3>
+        <span class="sev crit">Critical</span>
+      </div>
+      <p class="body">
+        <b>WCAG 2.2 math.</b> #E89A2C on #FFFFFF has a contrast ratio of
+        <b>2.3 : 1</b>. On #F4EDE3 cream it drops to <b>2.0 : 1</b>. Normal
+        text needs 4.5 : 1 for AA; large text needs 3 : 1. The current gold
+        fails <i>both</i> — including large‑text — on both light surfaces.
+      </p>
+      <p class="body">
+        Where does this bite? The v2 eyebrow style is <i>Gold, small caps,
+        letter‑tracked</i>, sitting on cream — which is the worst possible
+        combination: small size + low contrast + wide tracking = illegible
+        for anyone over 40 or on a dim phone screen. Same for the
+        "text link inside body copy" rule.
+      </p>
+      <div class="demo">
+        <div class="swatch-block">
+          <div class="fill" style="background:#F4EDE3;">
+            <span class="cap" style="color:#E89A2C;">EYEBROW · GOLD ON CREAM</span>
+          </div>
+          <div class="meta">
+            <b>#E89A2C on #F4EDE3</b>
+            <span class="ratio fail">2.0 : 1 · fails AA</span>
+          </div>
+        </div>
+        <div class="swatch-block">
+          <div class="fill" style="background:#F4EDE3;">
+            <span class="cap" style="color:#C77E1F;">EYEBROW · DEEP GOLD ON CREAM</span>
+          </div>
+          <div class="meta">
+            <b>#C77E1F on #F4EDE3</b>
+            <span class="ratio large">3.1 : 1 · AA large only</span>
+          </div>
+        </div>
+        <div class="swatch-block">
+          <div class="fill" style="background:#F4EDE3;">
+            <span class="cap" style="color:#173A2C;">EYEBROW · PINE ON CREAM</span>
+          </div>
+          <div class="meta">
+            <b>#173A2C on #F4EDE3</b>
+            <span class="ratio aa">10.4 : 1 · AAA</span>
+          </div>
+        </div>
+      </div>
+      <div class="verdict-row">
+        <h4>Recommendation</h4>
+        <p>
+          Codify the rule: <b>Gold #E89A2C is decorative only</b> — pill
+          buttons where the gradient does the work, icon glyphs where size
+          compensates. For <b>every</b> text token on light (eyebrows,
+          links, captions, meta labels), use <b>Pine #173A2C</b> or
+          <b>Deep Gold #C77E1F</b> at ≥14 px. This alone will raise the
+          brand's perceived quality more than any palette change.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FINDING 05 ══════ -->
+<section id="f5">
+  <div class="page">
+    <div class="finding">
+      <div class="finding-head">
+        <span class="num">05</span>
+        <h3>Ink Black and Graphite are indistinguishable — one of them earns its slot, not both</h3>
+        <span class="sev med">Medium</span>
+      </div>
+      <p class="body">
+        Ink #141414 and Graphite #1B1B1D differ by <b>4 L*</b> — under most
+        display gammas and viewing conditions, that gap is invisible. In
+        the current chip grid they read as one colour repeated. Two tokens
+        with the same visual behaviour add configuration noise for the
+        designer with no compositional payoff.
+      </p>
+      <p class="body">
+        Either merge them, or give Graphite a real reason to exist — a
+        subtle warm shift so it reads as "warm dark" against the cream
+        surfaces the brand ships on. That's the trick brands like Aman and
+        Le Bristol use: their "black" is never true neutral, it's
+        temperature‑matched to their ivory.
+      </p>
+      <div class="demo">
+        <div class="swatch-block">
+          <div class="fill" style="background:#141414;">
+            <span class="cap" style="color:#fff;">Ink Black</span>
+          </div>
+          <div class="meta"><b>#141414</b> HSL 0° · 0% · 8% — neutral</div>
+        </div>
+        <div class="swatch-block">
+          <div class="fill" style="background:#1B1B1D;">
+            <span class="cap" style="color:#fff;">Graphite (v2)</span>
+          </div>
+          <div class="meta"><b>#1B1B1D</b> HSL 240° · 3% · 11% — near‑identical</div>
+        </div>
+        <div class="swatch-block">
+          <div class="fill" style="background:#1A1512;">
+            <span class="cap" style="color:#fff;">Proposed Warm Ink</span>
+          </div>
+          <div class="meta"><b>#1A1512</b> HSL 22° · 15% · 9% — subtly warm</div>
+        </div>
+      </div>
+      <div class="verdict-row">
+        <h4>Recommendation</h4>
+        <p>
+          Retire Graphite. Rename Ink Black to <b>Warm Ink #1A1512</b> — the
+          same near‑black feel, but with a hair of red‑brown temperature so
+          it reads as an intentional companion to Cream and Foil Gold rather
+          than a neutral office grey. Use Navy Anchor #1A2035 (finding 02)
+          when a cool dark is required for room‑photo overlays.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FINDING 06 ══════ -->
+<section id="f6">
+  <div class="page">
+    <div class="finding">
+      <div class="finding-head">
+        <span class="num">06</span>
+        <h3>Poppins 800 is not the typography of a luxury mountain hotel</h3>
+        <span class="sev med">Medium</span>
+      </div>
+      <p class="body">
+        Poppins is a fine geometric sans, but weight 800 is the weight of a
+        SaaS landing page or a discount travel aggregator. Compare the
+        editorial typography of any Aman, Belmond, Le Bristol, Rosewood, or
+        Bulgari property: they use a lighter geometric sans (400–500) plus
+        a serif for display. Weight 800 does not appear on their brands
+        anywhere. It reads shouty.
+      </p>
+      <p class="body">
+        The Cormorant italic accent v2 already commits to <i>is</i> the
+        correct luxury signature — but as an occasional flavour, not the
+        display face. To level up, either promote Cormorant (or a stronger
+        display serif like <b>Fraunces</b>) to display duty and let Poppins
+        recede to body only; or keep Poppins as display but <b>cap the
+        weight at 700</b>.
+      </p>
+      <div class="type-compare">
+        <div>
+          <span class="tag">v2 · Poppins 800 · Display</span>
+          <p class="poppins-800">PINEMONT MURREE</p>
+          <p class="caption">Reads: promotional, shouty, tech‑startup.</p>
+        </div>
+        <div>
+          <span class="tag">Proposed · Fraunces italic 300 · Display</span>
+          <p class="fraunces">Pinemont Murree</p>
+          <p class="caption">Reads: editorial, serene, luxury hospitality.</p>
+        </div>
+      </div>
+      <div class="verdict-row">
+        <h4>Recommendation</h4>
+        <p>
+          Adopt <b>Fraunces</b> (a modern warm serif with an italic voice
+          close to Cormorant but with more presence at display sizes) for
+          all display and H1/H2 headlines. Keep Poppins 400 / 500 / 600 for
+          nav, eyebrows, buttons, and body — cap it at 700 for the rare
+          bold moment. Retire Poppins 800 entirely. This one change moves
+          the brand two rungs up the perceived‑luxury ladder.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ V3 PALETTE ══════ -->
+<section id="v3">
+  <div class="page">
+    <div class="v3-hero">
+      <span class="kicker">Proposed Brand Kit v3</span>
+      <h3>A palette read from the property, tuned by colour science, tested for contrast.</h3>
+      <p>
+        If you accept even three of the six findings, the palette below is
+        the delta. It keeps Pine, Champagne, Bronze, and Deep Bronze
+        exactly as v2 defined them. Everything else is either retuned,
+        added, or given a clearer role. No token here fails WCAG for its
+        stated use.
+      </p>
+    </div>
+
+    <div class="v3-group">
+      <p class="glabel">01 · Primary anchors</p>
+      <h3>The five surfaces every composition lives on</h3>
+      <div class="v3-chips">
+        <div class="v3-chip">
+          <div class="fill" style="background:#173A2C;"><span class="keepbadge">keep</span></div>
+          <div class="meta"><b>Pinemont Pine</b><span>#173A2C</span><em>Wordmark, headlines, deep hero blocks.</em></div>
+        </div>
+        <div class="v3-chip">
+          <div class="fill gradient-foil"><span class="newbadge">new</span></div>
+          <div class="meta"><b>Foil Gold</b><span>#C8A45E</span><em>New luxury anchor. Hero panels, print foil, poster fills.</em></div>
+        </div>
+        <div class="v3-chip">
+          <div class="fill" style="background:#EFE7D2;"><span class="newbadge">retuned</span></div>
+          <div class="meta"><b>Warm Cream</b><span>#EFE7D2</span><em>Retuned from #F4EDE3. Property‑aligned neutral.</em></div>
+        </div>
+        <div class="v3-chip">
+          <div class="fill" style="background:#F5EEDD;"><span class="newbadge">new</span></div>
+          <div class="meta"><b>Linen</b><span>#F5EEDD</span><em>Text‑on‑photo white. Never #FFFFFF over a warm scene.</em></div>
+        </div>
+        <div class="v3-chip">
+          <div class="fill" style="background:#1A2035;"><span class="newbadge">new</span></div>
+          <div class="meta"><b>Navy Anchor</b><span>#1A2035</span><em>Room‑derived dark. Overlays, night mode, evening events.</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="v3-group">
+      <p class="glabel">02 · Gold system — split by role</p>
+      <h3>Signal (attention) vs Foil (luxury). Never confused.</h3>
+      <div class="v3-chips">
+        <div class="v3-chip">
+          <div class="fill" style="background:#F7D28A;"><span class="keepbadge">keep</span></div>
+          <div class="meta"><b>Champagne</b><span>#F7D28A</span><em>Top stop of both gradients. Small highlight foils.</em></div>
+        </div>
+        <div class="v3-chip">
+          <div class="fill gradient-signal"><span class="keepbadge">keep</span></div>
+          <div class="meta"><b>Signal Gradient</b><span>135° F7D28A→E89A2C→A66A1B</span><em>CTAs, "Book Now" pills, digital‑only attention.</em></div>
+        </div>
+        <div class="v3-chip">
+          <div class="fill gradient-foil"><span class="newbadge">new</span></div>
+          <div class="meta"><b>Foil Gradient</b><span>135° E9D8AE→C8A45E→8E6F30</span><em>Print, poster, hero panels, invitations, foil accents.</em></div>
+        </div>
+        <div class="v3-chip">
+          <div class="fill" style="background:#E89A2C;"><span class="newbadge">demoted</span></div>
+          <div class="meta"><b>Signal Gold</b><span>#E89A2C</span><em>Was primary; now CTA/link only. Decorative, never text on light.</em></div>
+        </div>
+        <div class="v3-chip">
+          <div class="fill" style="background:#A66A1B;"><span class="keepbadge">keep</span></div>
+          <div class="meta"><b>Bronze Shadow</b><span>#A66A1B</span><em>Signal‑gradient shadow stop. Pressed‑state.</em></div>
+        </div>
+        <div class="v3-chip">
+          <div class="fill" style="background:#8E6F30;"><span class="newbadge">new</span></div>
+          <div class="meta"><b>Bronze Warm</b><span>#8E6F30</span><em>Foil‑gradient shadow. Walnut‑derived from rooms.</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="v3-group">
+      <p class="glabel">03 · Room‑derived accents</p>
+      <h3>Colours already living inside the property — safe to echo anywhere</h3>
+      <div class="v3-chips">
+        <div class="v3-chip">
+          <div class="fill" style="background:#D89A5B;"><span class="newbadge">new</span></div>
+          <div class="meta"><b>Lamplight Amber</b><span>#D89A5B</span><em>The 4/6 wall‑sconce glow. Soft companion for photo overlays.</em></div>
+        </div>
+        <div class="v3-chip">
+          <div class="fill" style="background:#B95B32;"><span class="newbadge">new</span></div>
+          <div class="meta"><b>Rust Velvet</b><span>#B95B32</span><em>2/6 accent. Seasonal only — autumn, harvest, weddings.</em></div>
+        </div>
+        <div class="v3-chip">
+          <div class="fill" style="background:#4F5B6A;"><span class="newbadge">new</span></div>
+          <div class="meta"><b>Curtain Slate</b><span>#4F5B6A</span><em>The one cool room tone. Supporting only, never CTA.</em></div>
+        </div>
+        <div class="v3-chip">
+          <div class="fill" style="background:#2E5742;"><span class="keepbadge">keep</span></div>
+          <div class="meta"><b>Forest Mist</b><span>#2E5742</span><em>Lighter green for hover and pine‑surface dividers.</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="v3-group">
+      <p class="glabel">04 · Ink & neutrals</p>
+      <h3>One warm dark. One text neutral. That's it.</h3>
+      <div class="v3-chips">
+        <div class="v3-chip">
+          <div class="fill" style="background:#1A1512;"><span class="newbadge">new</span></div>
+          <div class="meta"><b>Warm Ink</b><span>#1A1512</span><em>Replaces Ink Black + Graphite. Text on cream, deep panels.</em></div>
+        </div>
+        <div class="v3-chip">
+          <div class="fill" style="background:#4A4A4F;"><span class="keepbadge">keep</span></div>
+          <div class="meta"><b>Slate</b><span>#4A4A4F</span><em>Body copy on cream. AA at 4.5:1+.</em></div>
+        </div>
+        <div class="v3-chip">
+          <div class="fill" style="background:#8A8780;"><span class="keepbadge">keep</span></div>
+          <div class="meta"><b>Mute</b><span>#8A8780</span><em>Captions, meta, image labels. Never body text.</em></div>
+        </div>
+        <div class="v3-chip">
+          <div class="fill" style="background:#C77E1F;"><span class="keepbadge">keep</span></div>
+          <div class="meta"><b>Deep Gold</b><span>#C77E1F</span><em>Eyebrows and links on cream — AA large‑text safe.</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="v3-group">
+      <p class="glabel">05 · System / status</p>
+      <h3>Three functional colours so booking flows don't have to improvise</h3>
+      <div class="v3-chips">
+        <div class="v3-chip">
+          <div class="fill" style="background:#2E7D4F;"><span class="newbadge">new</span></div>
+          <div class="meta"><b>Success</b><span>#2E7D4F</span><em>Booking confirmed, form success, WhatsApp‑send OK.</em></div>
+        </div>
+        <div class="v3-chip">
+          <div class="fill" style="background:#C0392B;"><span class="newbadge">new</span></div>
+          <div class="meta"><b>Danger</b><span>#C0392B</span><em>Form errors, cancellations, unavailable dates.</em></div>
+        </div>
+        <div class="v3-chip">
+          <div class="fill" style="background:#C77E1F;"><span class="keepbadge">reuse</span></div>
+          <div class="meta"><b>Warning</b><span>#C77E1F</span><em>Reuses Deep Gold — no palette bloat.</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="v3-group">
+      <p class="glabel">06 · Typography — the one change that matters most</p>
+      <h3>Fraunces italic for display · Poppins for body · Cormorant retired</h3>
+      <p style="max-width:720px; color:var(--slate); font-size:0.92rem; margin-top:0.5rem; line-height:1.6;">
+        Fraunces has more presence at display sizes than Cormorant while
+        keeping the editorial italic voice you wanted. It's newer, better
+        rendered on screen, and used by e.g. Google's own brand refresh.
+        Poppins stays as the workhorse (400 / 500 / 600) — but weight 800
+        is retired. Total: two typefaces, three weights of Poppins, one
+        italic of Fraunces. Simpler than v2, more distinctive.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  Audit written after reading <a href="./rooms-kit.html">rooms‑kit.html</a>.
+  Compare against <a href="./brand-kit.html">the current brand kit</a> — then
+  decide which findings to accept.<br/>
+  Nothing has been changed in the shipped brand yet.
+</footer>
+
+</body>
+</html>

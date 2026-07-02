@@ -17,7 +17,7 @@ export function Rooms() {
     seed: 11,
   });
   return (
-    <Section id="rooms" tone="offwhite">
+    <Section id="rooms" tone="linen">
       <Container>
         <EyebrowHeading
           eyebrow="Rooms And Apartments"

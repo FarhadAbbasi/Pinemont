@@ -51,22 +51,29 @@ const AMENITIES_BG = "/assets/14a39e71.webp";
 
 export function Amenities() {
   return (
-    <section id="amenities" className="w-full py-10 sm:py-14 lg:py-20">
+    <section id="amenities" className="relative w-full py-20 sm:py-28 lg:py-36">
+      {/* Foil hairline — matches the Section component's default divider so
+          Amenities visually joins the section rhythm even though its card
+          layout is bespoke. */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-8 block h-px w-16 -translate-x-1/2 bg-hsq-gold/45 sm:top-12"
+      />
       <Container className="px-0 sm:px-4 lg:px-6">
-        <div className="relative isolate mx-auto w-[94%] overflow-hidden rounded-3xl shadow-luxury sm:w-full lg:w-[90%]">
+        <div className="relative isolate mx-auto w-[94%] overflow-hidden rounded-3xl shadow-luxury sm:w-full lg:w-[92%]">
           {/* Background image */}
           <Image
             src={AMENITIES_BG}
             alt=""
             fill
-            sizes="(min-width: 1024px) 90vw, 94vw"
+            sizes="(min-width: 1024px) 92vw, 94vw"
             className="-z-20 object-cover"
             priority={false}
           />
           {/* Dark scrim */}
           <div aria-hidden className="absolute inset-0 -z-10 bg-black/55" />
 
-          <div className="relative flex flex-col items-center gap-8 px-5 py-12 sm:px-10 sm:py-16 lg:flex-row lg:items-center lg:gap-12 lg:px-16 lg:py-20">
+          <div className="relative flex flex-col items-center gap-12 px-6 py-16 sm:px-12 sm:py-20 lg:flex-row lg:items-center lg:gap-16 lg:px-20 lg:py-28">
             {/* Left: brand + heading + CTA */}
             <div className="flex w-full flex-col items-center text-center lg:w-1/2 lg:order-1">
               <Image
@@ -74,26 +81,26 @@ export function Amenities() {
                 alt={`${BRAND.name} mark`}
                 width={200}
                 height={140}
-                className="h-14 w-auto sm:h-16 lg:h-20 drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]"
+                className="h-16 w-auto sm:h-20 lg:h-24 drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]"
               />
-              <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-white sm:text-3xl lg:text-4xl">
+              <h2 className="mt-6 text-3xl text-white sm:text-4xl lg:text-5xl">
                 Hotel Guest Facilities
               </h2>
-              <p className="mt-3 max-w-md text-body-sm text-white/80 sm:text-body">
+              <p className="mt-5 max-w-md text-body-sm text-white/80 sm:text-body">
                 {BRAND.tagline}.
               </p>
               <Button
                 variant="primary"
                 size="md"
                 href="#rooms"
-                className="mt-6 shadow-gold"
+                className="mt-8 shadow-gold"
               >
                 Book Now
               </Button>
             </div>
 
             {/* Right: glassy facility tiles */}
-            <div className="flex w-full flex-wrap justify-center gap-3 sm:gap-4 lg:order-2 lg:w-1/2">
+            <div className="flex w-full flex-wrap justify-center gap-4 sm:gap-5 lg:order-2 lg:w-1/2 lg:gap-6">
               {FACILITIES.map((f) => (
                 <FacilityTile key={f.label} {...f} />
               ))}

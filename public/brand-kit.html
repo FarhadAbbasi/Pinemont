@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pinemont — Visual Brand Kit (v3)</title>
+  <link rel="icon" href="/brand/Logo-M-Transparent.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      /* Primary anchors */
+      --pine:            #173A2C;
+      --pine-deep:       #0F2A20;
+      --foil-gold:       #C8A45E;
+      --signal-gold:     #E89A2C;
+      --cream:           #EFE7D2;
+      --linen:           #F5EEDD;
+      --ink:             #1A1512;
+
+      /* Gold system */
+      --champagne:       #F7D28A;
+      --foil-highlight:  #E9D8AE;
+      --bronze-warm:     #8E6F30;
+      --bronze-shadow:   #A66A1B;
+      --deep-gold:       #C77E1F;
+
+      /* Supporting */
+      --forest-mist:     #2E5742;
+      --slate:           #4A4A4F;
+      --mute:            #8A8780;
+      --amber:           #D89A5B;
+
+      /* Status */
+      --success:         #2E7D4F;
+      --danger:          #C0392B;
+
+      /* Signature gradients */
+      --gradient-foil:   linear-gradient(135deg, #E9D8AE 0%, #C8A45E 45%, #8E6F30 100%);
+      --gradient-signal: linear-gradient(135deg, #F7D28A 0%, #E89A2C 45%, #A66A1B 100%);
+      --gradient-ink:    linear-gradient(135deg, #0F2A20 0%, #1A1512 100%);
+
+      /* Shadows */
+      --shadow-card:  0 8px 24px -12px rgba(23, 58, 44, 0.18),
+                      0 2px 6px rgba(20, 20, 20, 0.05);
+      --shadow-lift:  0 18px 40px -14px rgba(23, 58, 44, 0.35),
+                      0 4px 10px -4px rgba(20, 20, 20, 0.15);
+      --shadow-foil:  0 12px 30px -12px rgba(200, 164, 94, 0.55);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Poppins", system-ui, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.55;
+      padding-bottom: 6rem;
+    }
+    .page { max-width: 1180px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ─── HERO ─── */
+    header.hero {
+      position: relative;
+      background: var(--gradient-ink);
+      color: var(--linen);
+      padding: 5rem 1.5rem 6rem;
+      overflow: hidden;
+    }
+    header.hero::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 65% 50% at 50% 100%, rgba(200, 164, 94, 0.22) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    header.hero .row { position: relative; max-width: 1180px; margin: 0 auto; }
+    header.hero .brand-row { display: flex; align-items: center; gap: 1rem; }
+    header.hero img.mark { height: 68px; filter: drop-shadow(0 4px 14px rgba(0,0,0,0.4)); }
+    header.hero .stamp {
+      display: inline-block;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      background: rgba(200, 164, 94, 0.18);
+      border: 1px solid rgba(200, 164, 94, 0.5);
+      color: var(--foil-highlight);
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    header.hero .kicker {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--foil-highlight);
+      font-size: 1.6rem;
+      margin-top: 2.25rem;
+      letter-spacing: 0.01em;
+    }
+    header.hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      font-size: clamp(2.5rem, 5.5vw, 3.75rem);
+      line-height: 1.1;
+      margin-top: 0.35rem;
+      max-width: 900px;
+      letter-spacing: -0.005em;
+    }
+    header.hero .subline {
+      font-family: "Poppins", sans-serif;
+      color: rgba(245, 238, 221, 0.75);
+      font-size: 1rem;
+      margin-top: 1.25rem;
+      max-width: 640px;
+      line-height: 1.65;
+    }
+    header.hero .nav {
+      display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+      margin-top: 2.5rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    header.hero .nav a {
+      color: rgba(245, 238, 221, 0.72);
+      text-decoration: none;
+      transition: color 200ms;
+    }
+    header.hero .nav a:hover { color: var(--foil-highlight); }
+
+    /* ─── Section frame ─── */
+    section { margin-top: 5rem; }
+    .lead { margin-bottom: 2rem; }
+    .lead .num {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--foil-gold);
+      font-size: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+    .eyebrow {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--deep-gold);
+    }
+    h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+      color: var(--pine);
+      margin-top: 0.35rem;
+      max-width: 780px;
+      line-height: 1.15;
+      letter-spacing: -0.005em;
+    }
+    h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      font-size: 1.2rem;
+      color: var(--pine);
+      letter-spacing: -0.002em;
+    }
+    p.intro {
+      max-width: 680px;
+      color: var(--slate);
+      margin-top: 0.9rem;
+      font-size: 0.98rem;
+    }
+
+    /* ─── Color chip ─── */
+    .chip-grid {
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .chip {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      background: #fff;
+      transition: transform 250ms ease, box-shadow 250ms ease;
+    }
+    .chip:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+    .chip .swatch {
+      height: 128px;
+      position: relative;
+      display: flex; align-items: flex-end; padding: 1rem;
+      color: var(--linen);
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.5rem;
+      letter-spacing: 0.01em;
+    }
+    .chip .swatch[data-onlight="true"] { color: var(--pine); }
+    .chip .meta { padding: 0.9rem 1rem 1.05rem; }
+    .chip .name {
+      font-family: "Poppins", sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--pine);
+      display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem;
+    }
+    .chip .hex {
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 0.72rem;
+      color: var(--slate);
+      background: var(--cream);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      letter-spacing: 0.02em;
+    }
+    .chip .role {
+      margin-top: 0.55rem;
+      font-size: 0.82rem;
+      color: var(--slate);
+      line-height: 1.5;
+    }
+
+    /* ─── Gold system feature panels ─── */
+    .gold-panel {
+      margin-top: 2rem;
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      color: var(--linen);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .gold-panel.foil { background: var(--gradient-foil); box-shadow: 0 18px 50px -14px rgba(200, 164, 94, 0.55); }
+    .gold-panel.signal { background: var(--gradient-signal); box-shadow: 0 18px 50px -14px rgba(215, 154, 44, 0.55); }
+    .gold-panel::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 40% 30% at 20% 30%, rgba(255,255,255,0.28) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 30% at 80% 70%, rgba(26, 21, 18, 0.28) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .gold-panel h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--linen);
+      font-size: 2.4rem;
+      margin: 0;
+      position: relative;
+      line-height: 1.1;
+    }
+    .gold-panel .role {
+      font-family: "Poppins", sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 0.5rem;
+      position: relative;
+      color: rgba(255,255,255,0.85);
+    }
+    .gold-panel code {
+      display: inline-block;
+      margin-top: 1.25rem;
+      padding: 0.55rem 1rem;
+      background: rgba(26, 21, 18, 0.4);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 8px;
+      color: var(--linen);
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 0.78rem;
+      position: relative;
+    }
+    .gold-panel .stops {
+      display: flex; gap: 1.25rem; justify-content: center; margin-top: 1.5rem;
+      flex-wrap: wrap; position: relative;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-family: "Poppins", sans-serif;
+    }
+    .gold-panel .stop { display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.9); }
+    .gold-panel .dot {
+      display: inline-block; width: 14px; height: 14px; border-radius: 999px;
+      border: 2px solid rgba(255,255,255,0.55);
+    }
+
+    .split-note {
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      margin-top: 2.5rem;
+    }
+    .split-note .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem 1.6rem;
+      border-left: 4px solid;
+    }
+    .split-note .card.foil { border-color: var(--foil-gold); }
+    .split-note .card.signal { border-color: var(--signal-gold); }
+    .split-note .card h4 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      color: var(--pine);
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.005em;
+    }
+    .split-note .card p.when {
+      font-family: "Poppins", sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--deep-gold);
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+    .split-note .card ul {
+      padding-left: 1.1rem;
+      font-size: 0.88rem;
+      color: var(--slate);
+      line-height: 1.65;
+    }
+
+    /* ─── Logos ─── */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .logo-card {
+      border-radius: 14px;
+      padding: 2rem;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 200px;
+      position: relative;
+      box-shadow: var(--shadow-card);
+    }
+    .logo-card img { max-width: 88%; max-height: 108px; object-fit: contain; }
+    .logo-card.on-cream { background: var(--cream); border: 1px solid rgba(20,20,20,0.06); }
+    .logo-card.on-linen { background: var(--linen); }
+    .logo-card.on-pine  { background: var(--pine); }
+    .logo-card.on-ink   { background: var(--ink); }
+    .logo-card.on-foil  { background: var(--gradient-foil); }
+    .logo-card .tag {
+      position: absolute; top: 0.75rem; left: 0.75rem;
+      font-family: "Poppins", sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.9);
+      color: var(--pine);
+    }
+    .logo-card.on-cream .tag, .logo-card.on-linen .tag { background: rgba(20,20,20,0.06); }
+    .logo-card .invert-on-dark {
+      filter: brightness(0) invert(1) drop-shadow(0 1px 2px rgba(0,0,0,0.4));
+    }
+
+    /* ─── Combinations ─── */
+    .combo-grid {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.5rem;
+    }
+    .combo {
+      border-radius: 14px;
+      overflow: hidden;
+      min-height: 280px;
+      display: flex; flex-direction: column;
+      padding: 1.75rem;
+      position: relative;
+      box-shadow: var(--shadow-card);
+    }
+    .combo .role {
+      font-family: "Poppins", sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .combo h4 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      font-size: 1.65rem;
+      margin-bottom: 0.55rem;
+      letter-spacing: -0.005em;
+      line-height: 1.15;
+    }
+    .combo p.usage {
+      font-family: "Poppins", sans-serif;
+      font-size: 0.86rem;
+      max-width: 320px;
+      line-height: 1.6;
+    }
+    .combo .btn {
+      margin-top: auto;
+      align-self: flex-start;
+      padding: 0.6rem 1.25rem;
+      border-radius: 9999px;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: none; cursor: pointer;
+    }
+
+    .combo.cream-pine { background: var(--cream); color: var(--pine); }
+    .combo.cream-pine .role { color: var(--deep-gold); }
+    .combo.cream-pine .btn { background: var(--gradient-foil); color: var(--linen); }
+
+    .combo.ink-foil {
+      background: var(--gradient-ink);
+      color: var(--linen);
+    }
+    .combo.ink-foil .role { color: var(--foil-highlight); }
+    .combo.ink-foil .btn { background: var(--gradient-foil); color: var(--linen); }
+
+    .combo.pine-signal { background: var(--pine); color: var(--linen); }
+    .combo.pine-signal .role { color: var(--champagne); }
+    .combo.pine-signal .btn { background: var(--gradient-signal); color: var(--linen); }
+
+    .combo.foil-ink {
+      background: var(--gradient-foil);
+      color: var(--ink);
+    }
+    .combo.foil-ink .role { color: rgba(26, 21, 18, 0.7); }
+    .combo.foil-ink .btn { background: var(--ink); color: var(--linen); }
+
+    /* ─── Typography ─── */
+    .type-panel {
+      background: #fff;
+      border-radius: 14px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-card);
+      margin-top: 2rem;
+    }
+    .type-row + .type-row {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(20,20,20,0.08);
+    }
+    .type-meta {
+      font-family: "Poppins", sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin-bottom: 0.65rem;
+    }
+    .type-sample.editorial {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 2.4rem;
+      color: var(--foil-gold);
+      line-height: 1.15;
+    }
+    .type-sample.display {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      font-size: 3rem;
+      letter-spacing: -0.005em;
+      color: var(--pine);
+      line-height: 1.05;
+    }
+    .type-sample.h {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      font-size: 2rem;
+      color: var(--pine);
+      letter-spacing: -0.005em;
+      line-height: 1.15;
+    }
+    .type-sample.eyebrow-example {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--deep-gold);
+    }
+    .type-sample.body {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      color: var(--slate);
+      max-width: 60ch;
+      line-height: 1.65;
+    }
+
+    /* ─── System colors ─── */
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .status-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.4rem 1.5rem;
+      display: flex; flex-direction: column;
+      box-shadow: var(--shadow-card);
+      border-left: 4px solid;
+    }
+    .status-card.success { border-color: var(--success); }
+    .status-card.warning { border-color: var(--deep-gold); }
+    .status-card.danger  { border-color: var(--danger); }
+    .status-card .swatch { width: 44px; height: 44px; border-radius: 8px; margin-bottom: 0.9rem; }
+    .status-card h4 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      font-size: 1.15rem;
+      color: var(--pine);
+      display: flex; align-items: baseline; gap: 0.6rem;
+    }
+    .status-card h4 span {
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 0.7rem;
+      color: var(--slate);
+      background: var(--cream);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+    .status-card p {
+      margin-top: 0.55rem;
+      font-family: "Poppins", sans-serif;
+      font-size: 0.85rem;
+      color: var(--slate);
+      line-height: 1.55;
+    }
+
+    /* ─── Code block ─── */
+    pre {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 1.4rem 1.5rem;
+      border-radius: 12px;
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 0.8rem;
+      overflow-x: auto;
+      margin-top: 1.5rem;
+      line-height: 1.6;
+    }
+    pre .comment { color: var(--mute); }
+    pre .val { color: var(--foil-highlight); }
+
+    /* ─── Footer ─── */
+    footer.foot {
+      margin-top: 6rem;
+      padding: 2rem 1.5rem;
+      background: var(--pine);
+      color: rgba(245, 238, 221, 0.7);
+      text-align: center;
+      font-family: "Poppins", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+    }
+    footer.foot a { color: var(--foil-highlight); text-decoration: none; }
+    footer.foot .foot-mark {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.1rem;
+      color: var(--foil-highlight);
+      margin-bottom: 0.65rem;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════ HERO ══════ -->
+<header class="hero">
+  <div class="row">
+    <div class="brand-row">
+      <img class="mark" src="./brand/Logo-M-Transparent.png" alt="Pinemont mark" />
+      <span class="stamp">v3 · after audit</span>
+    </div>
+    <p class="kicker">The visual language of</p>
+    <h1>Pinemont Hotel Murree</h1>
+    <p class="subline">
+      A pocket brand kit — every colour, every gradient, every logo lock‑up,
+      on screen at real size. Bring this open in a second window while you
+      design in Canva or Figma so the hex codes and combinations stay
+      honest. This is the ratified v3 palette: gold split into signal vs
+      foil, warm ink as the single dark anchor, cream retuned to the actual
+      room walls, eyebrows moved to Deep Gold so they pass WCAG.
+    </p>
+    <nav class="nav">
+      <a href="#logos">Logos</a>
+      <a href="#primary">Primary palette</a>
+      <a href="#gold-system">Gold system</a>
+      <a href="#secondary">Secondary</a>
+      <a href="#combos">Combinations</a>
+      <a href="#typography">Typography</a>
+      <a href="#status">System</a>
+      <a href="#css">CSS anchors</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════ LOGOS ══════ -->
+<section id="logos">
+  <div class="page">
+    <div class="lead">
+      <span class="num">01</span>
+      <p class="eyebrow">Logo lock‑ups</p>
+      <h2>Two marks, five surfaces</h2>
+      <p class="intro">
+        The M‑mountain stands alone as the property's symbol; the full
+        wordmark introduces the name. Never swap the M for the letter P
+        in the wordmark — it's an M, not a P.
+      </p>
+    </div>
+
+    <div class="logo-grid">
+      <div class="logo-card on-cream">
+        <span class="tag">Logo‑M · Cream</span>
+        <img src="./brand/Logo-M-Transparent.png" alt="Logo M on cream" />
+      </div>
+      <div class="logo-card on-pine">
+        <span class="tag">Logo‑M · Pine</span>
+        <img src="./brand/Logo-M-Transparent.png" alt="Logo M on pine" />
+      </div>
+      <div class="logo-card on-ink">
+        <span class="tag">Logo‑M · Warm Ink</span>
+        <img src="./brand/Logo-M-Transparent.png" alt="Logo M on ink" />
+      </div>
+      <div class="logo-card on-linen">
+        <span class="tag">Wordmark · Linen</span>
+        <img src="./brand/Logo-Pinemont-Transparent.png" alt="Wordmark on linen" />
+      </div>
+      <div class="logo-card on-ink">
+        <span class="tag">Wordmark · Ink (inverted)</span>
+        <img class="invert-on-dark" src="./brand/Logo-Pinemont-Transparent.png" alt="Wordmark inverted" />
+      </div>
+      <div class="logo-card on-foil">
+        <span class="tag">Wordmark · Foil (inverted)</span>
+        <img class="invert-on-dark" src="./brand/Logo-Pinemont-Transparent.png" alt="Wordmark on foil" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ PRIMARY PALETTE ══════ -->
+<section id="primary">
+  <div class="page">
+    <div class="lead">
+      <span class="num">02</span>
+      <p class="eyebrow">Primary palette</p>
+      <h2>Five anchors that carry the brand</h2>
+      <p class="intro">
+        Every surface uses two or three of these. Cream is the default
+        light background; warm ink is the single dark anchor; pine is the
+        wordmark and section headline colour; foil gold is the luxury
+        accent; linen is the warm white used over photographs.
+      </p>
+    </div>
+
+    <div class="chip-grid">
+      <div class="chip">
+        <div class="swatch" style="background:#173A2C;">Pinemont Pine</div>
+        <div class="meta">
+          <div class="name">Pinemont Pine <span class="hex">#173A2C</span></div>
+          <p class="role">Wordmark colour on light, headlines on cream, deep‑surface hero blocks.</p>
+        </div>
+      </div>
+      <div class="chip">
+        <div class="swatch" style="background:#C8A45E;">Foil Gold</div>
+        <div class="meta">
+          <div class="name">Foil Gold <span class="hex">#C8A45E</span></div>
+          <p class="role">The luxury anchor. Hero panels, print foil, poster fills, invitations. Property‑aligned.</p>
+        </div>
+      </div>
+      <div class="chip">
+        <div class="swatch" data-onlight="true" style="background:#EFE7D2;">Warm Cream</div>
+        <div class="meta">
+          <div class="name">Warm Cream <span class="hex">#EFE7D2</span></div>
+          <p class="role">Default light surface. Matches the actual paint on every sampled room wall.</p>
+        </div>
+      </div>
+      <div class="chip">
+        <div class="swatch" data-onlight="true" style="background:#F5EEDD; border-bottom:1px solid rgba(20,20,20,0.06);">Linen</div>
+        <div class="meta">
+          <div class="name">Linen <span class="hex">#F5EEDD</span></div>
+          <p class="role">Warm white for text over photographs. Never pure #FFFFFF on a warm scene.</p>
+        </div>
+      </div>
+      <div class="chip">
+        <div class="swatch" style="background:#1A1512;">Warm Ink</div>
+        <div class="meta">
+          <div class="name">Warm Ink <span class="hex">#1A1512</span></div>
+          <p class="role">The single dark anchor. Text on cream, dark panels, footer, evening surfaces.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ GOLD SYSTEM ══════ -->
+<section id="gold-system">
+  <div class="page">
+    <div class="lead">
+      <span class="num">03</span>
+      <p class="eyebrow">Gold system</p>
+      <h2>Two golds. One is attention, one is luxury.</h2>
+      <p class="intro">
+        Signal Gold is saturated, hot, and made to grab the eye — CTAs and
+        digital links only. Foil Gold is desaturated, calm, and reads as
+        real metallic — everything else. If you're not sure which to use,
+        the answer is Foil.
+      </p>
+    </div>
+
+    <!-- FOIL GRADIENT (default luxury) -->
+    <div class="gold-panel foil">
+      <p class="role">Foil Gold — the default luxury</p>
+      <h3>Hero panels, print, invitations, seasonal cards</h3>
+      <code>linear-gradient(135deg, #E9D8AE 0%, #C8A45E 45%, #8E6F30 100%)</code>
+      <div class="stops">
+        <div class="stop"><span class="dot" style="background:#E9D8AE"></span> Highlight</div>
+        <div class="stop"><span class="dot" style="background:#C8A45E"></span> Foil Gold</div>
+        <div class="stop"><span class="dot" style="background:#8E6F30"></span> Bronze Warm</div>
+      </div>
+    </div>
+
+    <!-- SIGNAL GRADIENT (CTAs only) -->
+    <div class="gold-panel signal">
+      <p class="role">Signal Gold — attention only</p>
+      <h3>Book Now, Reserve, Send WhatsApp — nothing else</h3>
+      <code>linear-gradient(135deg, #F7D28A 0%, #E89A2C 45%, #A66A1B 100%)</code>
+      <div class="stops">
+        <div class="stop"><span class="dot" style="background:#F7D28A"></span> Champagne</div>
+        <div class="stop"><span class="dot" style="background:#E89A2C"></span> Signal Gold</div>
+        <div class="stop"><span class="dot" style="background:#A66A1B"></span> Bronze</div>
+      </div>
+    </div>
+
+    <div class="chip-grid" style="margin-top:2.5rem;">
+      <div class="chip">
+        <div class="swatch" data-onlight="true" style="background:#F7D28A;">Champagne</div>
+        <div class="meta">
+          <div class="name">Champagne <span class="hex">#F7D28A</span></div>
+          <p class="role">Signal‑gradient top stop. Small foil catches, halos behind icons.</p>
+        </div>
+      </div>
+      <div class="chip">
+        <div class="swatch" data-onlight="true" style="background:#E9D8AE;">Foil Highlight</div>
+        <div class="meta">
+          <div class="name">Foil Highlight <span class="hex">#E9D8AE</span></div>
+          <p class="role">Foil‑gradient top stop. Softer than Champagne — for print‑luxury moments.</p>
+        </div>
+      </div>
+      <div class="chip">
+        <div class="swatch" style="background:#A66A1B;">Bronze Shadow</div>
+        <div class="meta">
+          <div class="name">Bronze Shadow <span class="hex">#A66A1B</span></div>
+          <p class="role">Signal‑gradient shadow stop. Pressed state on Signal buttons.</p>
+        </div>
+      </div>
+      <div class="chip">
+        <div class="swatch" style="background:#8E6F30;">Bronze Warm</div>
+        <div class="meta">
+          <div class="name">Bronze Warm <span class="hex">#8E6F30</span></div>
+          <p class="role">Foil‑gradient shadow stop. Walnut‑derived from rooms. Pressed state on Foil.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="split-note">
+      <div class="card foil">
+        <p class="when">Use foil gold for</p>
+        <h4>Everything luxury and permanent</h4>
+        <ul>
+          <li>Hero panels, poster backgrounds, ad campaign fills</li>
+          <li>Invitations, welcome cards, printed collateral</li>
+          <li>Ribbons and badges ("Preferred", "Seasonal")</li>
+          <li>Foil emboss on print, business‑card accents</li>
+          <li>Dividers under the wordmark in poster lock‑ups</li>
+          <li>Large numerals on rate cards</li>
+        </ul>
+      </div>
+      <div class="card signal">
+        <p class="when">Use signal gold for</p>
+        <h4>Only the things a user should click</h4>
+        <ul>
+          <li>Primary CTAs: Book Now, Reserve, Send WhatsApp</li>
+          <li>Form‑field focus rings</li>
+          <li>Text links inside body copy (min 14 px, min 3:1 contrast)</li>
+          <li>Interactive icon strokes on hover</li>
+          <li>Never as decorative surface — never as background of a card</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECONDARY ══════ -->
+<section id="secondary">
+  <div class="page">
+    <div class="lead">
+      <span class="num">04</span>
+      <p class="eyebrow">Secondary &amp; functional</p>
+      <h2>The quieter half of the palette</h2>
+      <p class="intro">
+        Text neutrals, hover states, room‑echo warm tones. Rarely lead a
+        composition — support it.
+      </p>
+    </div>
+
+    <div class="chip-grid">
+      <div class="chip">
+        <div class="swatch" style="background:#C77E1F;">Deep Gold</div>
+        <div class="meta">
+          <div class="name">Deep Gold <span class="hex">#C77E1F</span></div>
+          <p class="role">Eyebrows and text links on cream — AA large‑text safe (3.1 : 1). Also warning colour.</p>
+        </div>
+      </div>
+      <div class="chip">
+        <div class="swatch" style="background:#2E5742;">Forest Mist</div>
+        <div class="meta">
+          <div class="name">Forest Mist <span class="hex">#2E5742</span></div>
+          <p class="role">Hover state for pine surfaces. Divider accents on pine.</p>
+        </div>
+      </div>
+      <div class="chip">
+        <div class="swatch" style="background:#4A4A4F;">Slate</div>
+        <div class="meta">
+          <div class="name">Slate <span class="hex">#4A4A4F</span></div>
+          <p class="role">Body copy on cream or white. AA at 4.5 : 1+. The default paragraph colour.</p>
+        </div>
+      </div>
+      <div class="chip">
+        <div class="swatch" data-onlight="true" style="background:#8A8780;">Mute</div>
+        <div class="meta">
+          <div class="name">Mute <span class="hex">#8A8780</span></div>
+          <p class="role">Captions, meta, image labels, deprioritised UI. Never body text.</p>
+        </div>
+      </div>
+      <div class="chip">
+        <div class="swatch" data-onlight="true" style="background:#D89A5B;">Lamplight Amber</div>
+        <div class="meta">
+          <div class="name">Lamplight Amber <span class="hex">#D89A5B</span></div>
+          <p class="role">Room‑echo warm. Photo overlays, seasonal illustrations, wall‑sconce accent.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ COMBINATIONS ══════ -->
+<section id="combos">
+  <div class="page">
+    <div class="lead">
+      <span class="num">05</span>
+      <p class="eyebrow">Combinations</p>
+      <h2>Four surfaces that always work</h2>
+      <p class="intro">
+        The actual button, the actual card, the actual heading — so the
+        hex codes turn into something you can recognise in your feed.
+      </p>
+    </div>
+
+    <div class="combo-grid">
+      <div class="combo cream-pine">
+        <p class="role">01 · Default marketing</p>
+        <h4>Cream + Pine + Foil</h4>
+        <p class="usage">The quiet daylight pairing. Editorials, printed collateral, long‑form content, welcome cards, room descriptions.</p>
+        <button class="btn">Explore Rooms</button>
+      </div>
+
+      <div class="combo ink-foil">
+        <p class="role">02 · Evening luxury</p>
+        <h4>Warm Ink + Foil Gold</h4>
+        <p class="usage">Night exteriors, evening events, seasonal invitations, winter takeover ads. The premium print register.</p>
+        <button class="btn">Reserve · Evening</button>
+      </div>
+
+      <div class="combo pine-signal">
+        <p class="role">03 · Digital call‑to‑action</p>
+        <h4>Pine + Signal Gold</h4>
+        <p class="usage">Website hero, booking flows, WhatsApp share cards. Signal gold does its one job — get clicked.</p>
+        <button class="btn">Book Now</button>
+      </div>
+
+      <div class="combo foil-ink">
+        <p class="role">04 · Foil moment</p>
+        <h4>Foil Gold + Warm Ink</h4>
+        <p class="usage">Reserved for the special surface. Anniversary cards, gift certificates, foil business‑card accents.</p>
+        <button class="btn">RSVP</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ TYPOGRAPHY ══════ -->
+<section id="typography">
+  <div class="page">
+    <div class="lead">
+      <span class="num">06</span>
+      <p class="eyebrow">Typography</p>
+      <h2>One serif for luxury. One sans for order.</h2>
+      <p class="intro">
+        Cormorant Garamond upright weights 500–600 for every display and
+        headline — the classic Aman / Le Bristol / Four Seasons hotel
+        serif. Cormorant italic 300 only for the poetic one‑liner accent
+        ("A slower morning in the mountains"). Poppins 400 / 500 / 600 for
+        nav, eyebrows, buttons, body. Weight 800 is retired.
+      </p>
+    </div>
+
+    <div class="type-panel">
+      <div class="type-row">
+        <p class="type-meta">Editorial accent · Cormorant italic 300 · Foil Gold</p>
+        <p class="type-sample editorial">A slower morning<br />in the mountains</p>
+      </div>
+      <div class="type-row">
+        <p class="type-meta">Display · Cormorant upright 500 · Pine · -0.005em</p>
+        <p class="type-sample display">Pinemont Murree</p>
+      </div>
+      <div class="type-row">
+        <p class="type-meta">Section heading · Cormorant upright 500 · Pine</p>
+        <p class="type-sample h">Every detail meets luxury.</p>
+      </div>
+      <div class="type-row">
+        <p class="type-meta">Eyebrow · Poppins 600 · Deep Gold · +0.24em uppercase · min 14 px</p>
+        <p class="type-sample eyebrow-example">Rooms &amp; Suites</p>
+      </div>
+      <div class="type-row">
+        <p class="type-meta">Body · Poppins 400 · Slate</p>
+        <p class="type-sample body">
+          Wake up to the mountains. Sixteen rooms and suites, four
+          kitchens, one rooftop. Placeholder body sample so you can
+          feel the line‑height, colour, and rhythm before you paste
+          real copy in Canva.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ STATUS COLORS ══════ -->
+<section id="status">
+  <div class="page">
+    <div class="lead">
+      <span class="num">07</span>
+      <p class="eyebrow">System / status</p>
+      <h2>Three colours for the flows that need them</h2>
+      <p class="intro">
+        Booking confirmations, form errors, date warnings. Add
+        sparingly — status colour is never a marketing surface.
+      </p>
+    </div>
+
+    <div class="status-grid">
+      <div class="status-card success">
+        <div class="swatch" style="background:var(--success);"></div>
+        <h4>Success <span>#2E7D4F</span></h4>
+        <p>Booking confirmed, form success, WhatsApp‑send OK. Deep pine‑adjacent green so it lives in the palette.</p>
+      </div>
+      <div class="status-card warning">
+        <div class="swatch" style="background:var(--deep-gold);"></div>
+        <h4>Warning <span>#C77E1F</span></h4>
+        <p>Reuses Deep Gold — no palette bloat. Rate changes, low availability, "3 rooms left this weekend".</p>
+      </div>
+      <div class="status-card danger">
+        <div class="swatch" style="background:var(--danger);"></div>
+        <h4>Danger <span>#C0392B</span></h4>
+        <p>Form errors, cancellations, unavailable dates. Warm red — never a bluish alarm red that fights the palette.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ CSS ANCHORS ══════ -->
+<section id="css">
+  <div class="page">
+    <div class="lead">
+      <span class="num">08</span>
+      <p class="eyebrow">Paste‑ready CSS</p>
+      <h2>Drop these into any project</h2>
+      <p class="intro">
+        Copy the block below to bring the whole v3 system into a Figma
+        variable set, a Tailwind config, or another codebase.
+      </p>
+    </div>
+
+<pre><span class="comment">/* Pinemont brand tokens — v3 */</span>
+:root {
+  <span class="comment">/* Primary anchors */</span>
+  --pinemont-pine:   <span class="val">#173A2C</span>;
+  --pinemont-foil:   <span class="val">#C8A45E</span>;
+  --pinemont-cream:  <span class="val">#EFE7D2</span>;
+  --pinemont-linen:  <span class="val">#F5EEDD</span>;
+  --pinemont-ink:    <span class="val">#1A1512</span>;
+
+  <span class="comment">/* Gold system */</span>
+  --gold-signal:     <span class="val">#E89A2C</span>;
+  --gold-champagne:  <span class="val">#F7D28A</span>;
+  --gold-highlight:  <span class="val">#E9D8AE</span>;
+  --gold-bronze:     <span class="val">#A66A1B</span>;
+  --gold-bronze-warm:<span class="val">#8E6F30</span>;
+  --gold-deep:       <span class="val">#C77E1F</span>;
+
+  <span class="comment">/* Supporting */</span>
+  --forest-mist:     <span class="val">#2E5742</span>;
+  --slate:           <span class="val">#4A4A4F</span>;
+  --mute:            <span class="val">#8A8780</span>;
+  --amber:           <span class="val">#D89A5B</span>;
+
+  <span class="comment">/* System */</span>
+  --success:         <span class="val">#2E7D4F</span>;
+  --danger:          <span class="val">#C0392B</span>;
+
+  <span class="comment">/* Signature gradients */</span>
+  --gradient-foil:   linear-gradient(135deg,
+      var(--gold-highlight) 0%,
+      var(--pinemont-foil) 45%,
+      var(--gold-bronze-warm) 100%);
+
+  --gradient-signal: linear-gradient(135deg,
+      var(--gold-champagne) 0%,
+      var(--gold-signal) 45%,
+      var(--gold-bronze) 100%);
+
+  <span class="comment">/* Signature shadow — cards over photos */</span>
+  --shadow-card:  0 8px 24px -12px rgba(23, 58, 44, 0.18),
+                  0 2px 6px rgba(20, 20, 20, 0.05);
+  --shadow-lift:  0 18px 40px -14px rgba(23, 58, 44, 0.35),
+                  0 4px 10px -4px rgba(20, 20, 20, 0.15);
+}
+
+<span class="comment">/* Typography — two families only */</span>
+--font-display:  "Cormorant Garamond", serif;     <span class="comment">/* upright 500-600 */</span>
+--font-body:     "Poppins", system-ui, sans-serif;<span class="comment">/* 400-600 */</span>
+</pre>
+  </div>
+</section>
+
+<footer class="foot">
+  <span class="foot-mark">Pinemont Hotel Murree</span>
+  Brand kit v3 · ratified against the audit ·
+  <a href="./brand-kit-audit.html">read the six findings</a> ·
+  <a href="./rooms-kit.html">rooms colour kit</a> ·
+  <a href="./brand-v2-vs-v3.html">v2 vs v3 side by side</a>
+</footer>
+
+</body>
+</html>

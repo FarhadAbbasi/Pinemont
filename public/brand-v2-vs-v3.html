@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pinemont — v2 vs v3 side by side</title>
+  <link rel="icon" href="/brand/Logo-M-Transparent.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Poppins", system-ui, sans-serif;
+      background: #EFE7D2;
+      color: #141414;
+      line-height: 1.55;
+      padding-bottom: 6rem;
+    }
+    .page { max-width: 1240px; margin: 0 auto; padding: 0 1.25rem; }
+
+    /* ─── HERO ─── */
+    header.top {
+      background: linear-gradient(135deg, #0F2A20 0%, #141414 100%);
+      color: #fff;
+      padding: 3.5rem 1.25rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    header.top::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 45% at 30% 100%, rgba(200, 164, 94, 0.24) 0%, transparent 65%);
+    }
+    header.top .row { max-width: 1240px; margin: 0 auto; position: relative; }
+    header.top img.mark { height: 48px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4)); }
+    header.top .kicker {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 300;
+      color: #C8A45E;
+      font-size: 1.55rem;
+      margin-top: 1.75rem;
+      letter-spacing: 0.01em;
+    }
+    header.top h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      font-size: clamp(2.15rem, 4.75vw, 3.2rem);
+      margin-top: 0.3rem;
+      max-width: 900px;
+      line-height: 1.15;
+      letter-spacing: -0.005em;
+    }
+    header.top p.sub {
+      color: rgba(255,255,255,0.75);
+      max-width: 640px;
+      margin-top: 1.15rem;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    /* ─── SECTION FRAME ─── */
+    section { margin-top: 3.5rem; }
+    .lead { margin-bottom: 1.5rem; }
+    .lead .num {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 400;
+      color: #C8A45E;
+      font-size: 1.4rem;
+      letter-spacing: 0.02em;
+    }
+    .lead h2 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: 1.65rem;
+      color: #173A2C;
+      margin-top: 0.25rem;
+      line-height: 1.2;
+      max-width: 780px;
+    }
+    .lead p {
+      color: #4A4A4F;
+      max-width: 700px;
+      margin-top: 0.65rem;
+      font-size: 0.92rem;
+    }
+
+    /* ─── AB PAIR ─── */
+    .ab {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 900px) { .ab { grid-template-columns: 1fr 1fr; } }
+    .card {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px -14px rgba(20,20,20,0.25);
+      background: #fff;
+      display: flex; flex-direction: column;
+      position: relative;
+    }
+    .card .label {
+      position: absolute;
+      top: 0.7rem; left: 0.7rem;
+      z-index: 5;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .card.v2 .label {
+      background: rgba(20,20,20,0.85);
+      color: #E89A2C;
+    }
+    .card.v3 .label {
+      background: rgba(20,20,20,0.85);
+      color: #C8A45E;
+    }
+
+    /* ─── 01 — Hero panel ─── */
+    .hero-preview {
+      min-height: 380px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex; align-items: flex-end;
+      padding: 2rem 1.75rem 2rem;
+      color: #fff;
+    }
+    .hero-preview::after {
+      content: ""; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 55% at 50% 72%, rgba(215,171,78,0.24) 0%, transparent 70%),
+        linear-gradient(180deg, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.85) 100%);
+    }
+    .hero-preview .stack {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+    /* v2 hero */
+    .hero-preview.v2 .accent {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 300;
+      color: #E89A2C;
+      font-size: 2rem;
+      line-height: 1;
+    }
+    .hero-preview.v2 h3 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 800;
+      font-size: 2.75rem;
+      color: #fff;
+      letter-spacing: -0.015em;
+      line-height: 1;
+      margin-top: 0.35rem;
+    }
+    .hero-preview.v2 p {
+      font-family: "Poppins", sans-serif;
+      color: rgba(255,255,255,0.82);
+      margin-top: 0.85rem;
+      font-size: 0.95rem;
+      max-width: 320px;
+    }
+    .hero-preview.v2 .btn {
+      display: inline-block;
+      margin-top: 1.1rem;
+      padding: 0.7rem 1.5rem;
+      background: linear-gradient(135deg, #F7D28A 0%, #E89A2C 45%, #A66A1B 100%);
+      color: #fff;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      box-shadow: 0 10px 24px -10px rgba(232,154,44,0.55);
+    }
+    /* v3 hero */
+    .hero-preview.v3 .accent {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 300;
+      color: #C8A45E;
+      font-size: 2.35rem;
+      line-height: 1;
+    }
+    .hero-preview.v3 h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      font-size: 3.1rem;
+      color: #fff;
+      letter-spacing: -0.005em;
+      line-height: 1.05;
+      margin-top: 0.35rem;
+    }
+    .hero-preview.v3 p {
+      font-family: "Poppins", sans-serif;
+      color: rgba(255,255,255,0.82);
+      margin-top: 0.85rem;
+      font-size: 0.95rem;
+      max-width: 320px;
+    }
+    .hero-preview.v3 .btn {
+      display: inline-block;
+      margin-top: 1.1rem;
+      padding: 0.7rem 1.5rem;
+      background: linear-gradient(135deg, #E9D8AE 0%, #C8A45E 45%, #8E6F30 100%);
+      color: #fff;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      box-shadow: 0 10px 24px -10px rgba(200,164,94,0.55);
+    }
+
+    /* Card diagnostics footer */
+    .card .diag {
+      padding: 1rem 1.25rem 1.15rem;
+      background: #fff;
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+    }
+    .diag .tok {
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 0.66rem;
+      color: #4A4A4F;
+      background: #EFE7D2;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      letter-spacing: 0.02em;
+    }
+    .diag .tok b {
+      color: #173A2C;
+      font-weight: 600;
+    }
+
+    /* ─── 02 — Overlay card on room photo ─── */
+    .overlay-preview {
+      min-height: 340px;
+      background-size: cover; background-position: center;
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      padding: 1.5rem;
+    }
+    .overlay-preview::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.55) 100%);
+    }
+    .overlay-card {
+      position: relative;
+      z-index: 2;
+      padding: 1.3rem 1.5rem;
+      border-radius: 12px;
+      max-width: 280px;
+      backdrop-filter: blur(6px);
+    }
+    /* v2 overlay */
+    .overlay-card.v2 {
+      background: rgba(244, 237, 227, 0.94);
+      color: #173A2C;
+      box-shadow: 0 12px 30px -12px rgba(20,20,20,0.4);
+    }
+    .overlay-card.v2 .eyebrow {
+      color: #E89A2C;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .overlay-card.v2 h4 {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.55rem;
+      margin: 0.3rem 0 0.55rem;
+      color: #173A2C;
+    }
+    .overlay-card.v2 p {
+      font-family: "Poppins", sans-serif;
+      font-size: 0.82rem;
+      color: #4A4A4F;
+    }
+    .overlay-card.v2 button {
+      margin-top: 0.9rem;
+      background: linear-gradient(135deg, #F7D28A 0%, #E89A2C 45%, #A66A1B 100%);
+      color: #fff;
+      border: none;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+    }
+    /* v3 overlay */
+    .overlay-card.v3 {
+      background: rgba(239, 231, 210, 0.94);
+      color: #1A1512;
+      box-shadow: 0 18px 40px -14px rgba(23, 58, 44, 0.55), 0 4px 10px -4px rgba(20, 20, 20, 0.20);
+    }
+    .overlay-card.v3 .eyebrow {
+      color: #C77E1F;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .overlay-card.v3 h4 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      font-size: 1.9rem;
+      margin: 0.3rem 0 0.55rem;
+      color: #173A2C;
+      line-height: 1.15;
+      letter-spacing: -0.005em;
+    }
+    .overlay-card.v3 p {
+      font-family: "Poppins", sans-serif;
+      font-size: 0.82rem;
+      color: #4A4A4F;
+    }
+    .overlay-card.v3 button {
+      margin-top: 0.9rem;
+      background: linear-gradient(135deg, #E9D8AE 0%, #C8A45E 45%, #8E6F30 100%);
+      color: #fff;
+      border: none;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+    }
+
+    /* ─── 03 — Editorial block (eyebrow + headline + body) ─── */
+    .edit-block {
+      padding: 2.5rem 2rem;
+      display: flex; flex-direction: column;
+      min-height: 320px;
+    }
+    .edit-block.v2 { background: #F4EDE3; color: #141414; }
+    .edit-block.v3 { background: #EFE7D2; color: #1A1512; }
+
+    .edit-block.v2 .eyebrow {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 0.72rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #E89A2C;
+    }
+    .edit-block.v2 h3 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 800;
+      font-size: 2.5rem;
+      color: #173A2C;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      margin-top: 0.4rem;
+      max-width: 380px;
+    }
+    .edit-block.v2 p {
+      font-family: "Poppins", sans-serif;
+      color: #4A4A4F;
+      font-size: 0.95rem;
+      margin-top: 1rem;
+      max-width: 380px;
+      line-height: 1.65;
+    }
+    .edit-block.v3 .eyebrow {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 0.72rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #C77E1F;
+    }
+    .edit-block.v3 h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      font-size: 2.9rem;
+      color: #173A2C;
+      letter-spacing: -0.005em;
+      line-height: 1.05;
+      margin-top: 0.4rem;
+      max-width: 380px;
+    }
+    .edit-block.v3 p {
+      font-family: "Poppins", sans-serif;
+      color: #4A4A4F;
+      font-size: 0.95rem;
+      margin-top: 1rem;
+      max-width: 380px;
+      line-height: 1.65;
+    }
+    .edit-block .btnrow { margin-top: 1.4rem; display: flex; gap: 0.65rem; flex-wrap: wrap; }
+    .edit-block.v2 .btn-primary {
+      background: linear-gradient(135deg, #F7D28A 0%, #E89A2C 45%, #A66A1B 100%);
+      color: #fff; border: none; padding: 0.65rem 1.3rem;
+      border-radius: 999px; font-weight: 600;
+      font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .edit-block.v2 .btn-secondary {
+      background: transparent; color: #173A2C;
+      border: 1.5px solid #173A2C;
+      padding: 0.65rem 1.3rem;
+      border-radius: 999px; font-weight: 600;
+      font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .edit-block.v3 .btn-primary {
+      background: linear-gradient(135deg, #E9D8AE 0%, #C8A45E 45%, #8E6F30 100%);
+      color: #fff; border: none; padding: 0.65rem 1.3rem;
+      border-radius: 999px; font-weight: 600;
+      font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .edit-block.v3 .btn-secondary {
+      background: transparent; color: #173A2C;
+      border: 1.5px solid #173A2C;
+      padding: 0.65rem 1.3rem;
+      border-radius: 999px; font-weight: 600;
+      font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
+    }
+
+    /* ─── 04 — Dark hero for cool-dark comparison ─── */
+    .dark-block { padding: 2.5rem 2rem; min-height: 320px; position: relative; overflow: hidden; }
+    .dark-block.v2 { background: #141414; }
+    .dark-block.v3 {
+      background: linear-gradient(135deg, #3A2418 0%, #5A3520 55%, #6B4423 100%);
+    }
+    .dark-block.v3::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 55% 45% at 85% 25%, rgba(200, 164, 94, 0.18) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .dark-block.v3 > * { position: relative; z-index: 1; }
+    .dark-block .kicker {
+      font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 300;
+      font-size: 1.2rem;
+    }
+    .dark-block.v2 .kicker { color: #F7D28A; }
+    .dark-block.v3 .kicker { color: #C8A45E; }
+    .dark-block h3 {
+      color: #fff;
+      margin-top: 0.4rem;
+      max-width: 400px;
+      line-height: 1.1;
+    }
+    .dark-block.v2 h3 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 800;
+      font-size: 2.3rem;
+      letter-spacing: -0.02em;
+    }
+    .dark-block.v3 h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      font-size: 2.75rem;
+      letter-spacing: -0.005em;
+      line-height: 1.1;
+    }
+    .dark-block p {
+      font-family: "Poppins", sans-serif;
+      color: rgba(255,255,255,0.72);
+      font-size: 0.92rem;
+      margin-top: 1rem; max-width: 380px;
+    }
+    .dark-block .btn {
+      display: inline-block; margin-top: 1.3rem;
+      padding: 0.65rem 1.3rem;
+      border-radius: 999px;
+      font-weight: 600; font-size: 0.78rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .dark-block.v2 .btn {
+      background: linear-gradient(135deg, #F7D28A 0%, #E89A2C 45%, #A66A1B 100%);
+      color: #fff;
+    }
+    .dark-block.v3 .btn {
+      background: linear-gradient(135deg, #E9D8AE 0%, #C8A45E 45%, #8E6F30 100%);
+      color: #fff;
+    }
+
+    /* ─── 05 — Palette strip side by side ─── */
+    .palette-row {
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 900px) { .palette-row { grid-template-columns: 1fr 1fr; } }
+    .palette-col {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.25rem 1.4rem 1.5rem;
+      box-shadow: 0 4px 14px -6px rgba(20,20,20,0.14);
+    }
+    .palette-col h4 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      color: #173A2C;
+      font-size: 0.95rem;
+      margin-bottom: 0.15rem;
+    }
+    .palette-col .tag {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 0.6rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+    .palette-col.v2 .tag { color: #E89A2C; }
+    .palette-col.v3 .tag { color: #C8A45E; }
+    .palette-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.35rem;
+      margin-top: 1rem;
+    }
+    .palette-strip .sq {
+      aspect-ratio: 1 / 1;
+      border-radius: 6px;
+      border: 1px solid rgba(20,20,20,0.05);
+      display: flex; align-items: flex-end; justify-content: center;
+      padding: 0.3rem;
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 0.58rem;
+    }
+    .palette-strip .sq.dark { color: rgba(255,255,255,0.75); }
+    .palette-strip .sq.light { color: rgba(20,20,20,0.55); }
+
+    /* verdict summary */
+    .verdict-block {
+      margin-top: 2rem;
+      background: linear-gradient(135deg, #0F2A20 0%, #173A2C 100%);
+      color: #fff;
+      padding: 2rem;
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .verdict-block::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 45% at 80% 30%, rgba(200, 164, 94, 0.22) 0%, transparent 60%);
+    }
+    .verdict-block .kicker {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 0.7rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #C8A45E;
+      position: relative;
+    }
+    .verdict-block h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.8rem;
+      max-width: 720px;
+      margin-top: 0.35rem;
+      position: relative;
+      line-height: 1.2;
+    }
+    .verdict-block ul {
+      max-width: 780px;
+      margin-top: 1rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .verdict-block li {
+      color: rgba(255,255,255,0.82);
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      line-height: 1.55;
+    }
+    .verdict-block li b { color: #C8A45E; font-weight: 600; }
+
+    footer.foot {
+      margin-top: 5rem;
+      padding: 2rem 1.5rem;
+      background: #173A2C;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      font-size: 0.82rem;
+    }
+    footer.foot a { color: #F7D28A; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header class="top">
+  <div class="row">
+    <img class="mark" src="./brand/Logo-M-Transparent.png" alt="Pinemont mark" />
+    <p class="kicker">Look at the difference — not the theory</p>
+    <h1>v2 (current) vs v3 (proposed) — the same content, side by side.</h1>
+    <p class="sub">
+      Each row below renders the same asset twice. Left = current brand kit
+      (Poppins 800, Signal Gold, Cream #F4EDE3, Ink Black). Right = revised
+      v3 (Cormorant Garamond upright, Foil Gold, Warm Cream, Walnut +
+      Espresso). Look at each pair for ten seconds. Navy is out; walnut and
+      chocolate are in; Fraunces is gone. If v3 still doesn't feel like the
+      hotel you want people to remember, we won't ratify it.
+    </p>
+  </div>
+</header>
+
+<!-- ══════ 01 · HERO PANEL ══════ -->
+<section>
+  <div class="page">
+    <div class="lead">
+      <span class="num">01</span>
+      <h2>Hero panel — same photo, same words</h2>
+      <p>The moment a first‑time visitor sees on the homepage or an Instagram takeover ad. Fonts and gold changed; nothing else.</p>
+    </div>
+    <div class="ab">
+      <div class="card v2">
+        <span class="label">v2 · current</span>
+        <div class="hero-preview v2" style="background-image:url('./assets/806101451.jpg')">
+          <div class="stack">
+            <p class="accent">Plan your escape</p>
+            <h3>PINEMONT MURREE</h3>
+            <p>Where every detail meets luxury. Wake up to the mountains.</p>
+            <a class="btn">Book Now</a>
+          </div>
+        </div>
+        <div class="diag">
+          <span class="tok"><b>Display:</b> Poppins 800</span>
+          <span class="tok"><b>Accent:</b> Cormorant Italic 300</span>
+          <span class="tok"><b>Gold:</b> #E89A2C signal gradient</span>
+        </div>
+      </div>
+      <div class="card v3">
+        <span class="label">v3 · proposed</span>
+        <div class="hero-preview v3" style="background-image:url('./assets/806101451.jpg')">
+          <div class="stack">
+            <p class="accent">Plan your escape</p>
+            <h3>Pinemont Murree</h3>
+            <p>Where every detail meets luxury. Wake up to the mountains.</p>
+            <a class="btn">Book Now</a>
+          </div>
+        </div>
+        <div class="diag">
+          <span class="tok"><b>Display:</b> Cormorant Garamond 500</span>
+          <span class="tok"><b>Accent:</b> Cormorant Italic 300</span>
+          <span class="tok"><b>Gold:</b> #C8A45E foil gradient</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ 02 · OVERLAY CARD ══════ -->
+<section>
+  <div class="page">
+    <div class="lead">
+      <span class="num">02</span>
+      <h2>Card overlay on a real room photo</h2>
+      <p>The pattern used for room‑type callouts, seasonal offers, and Meta ads with a headline card floating over a hotel shot. Same room, same copy.</p>
+    </div>
+    <div class="ab">
+      <div class="card v2">
+        <span class="label">v2 · current</span>
+        <div class="overlay-preview" style="background-image:url('./assets/806104198.jpg')">
+          <div class="overlay-card v2">
+            <p class="eyebrow">Presidential Suite</p>
+            <h4>The room where the day slows down.</h4>
+            <p>Navy headboard, gilt seating, and a valley view through the curtains.</p>
+            <button>Reserve</button>
+          </div>
+        </div>
+        <div class="diag">
+          <span class="tok"><b>Surface:</b> Cream #F4EDE3 @ 94%</span>
+          <span class="tok"><b>Eyebrow:</b> Gold on cream — <span style="color:#C0392B">2.0 : 1 fails AA</span></span>
+        </div>
+      </div>
+      <div class="card v3">
+        <span class="label">v3 · proposed</span>
+        <div class="overlay-preview" style="background-image:url('./assets/806104198.jpg')">
+          <div class="overlay-card v3">
+            <p class="eyebrow">Presidential Suite</p>
+            <h4>The room where the day slows down.</h4>
+            <p>Navy headboard, gilt seating, and a valley view through the curtains.</p>
+            <button>Reserve</button>
+          </div>
+        </div>
+        <div class="diag">
+          <span class="tok"><b>Surface:</b> Warm Cream #EFE7D2 @ 94%</span>
+          <span class="tok"><b>Eyebrow:</b> Deep Gold on cream — <span style="color:#2E7D4F">3.4 : 1 AA large</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ 03 · EDITORIAL BLOCK ══════ -->
+<section>
+  <div class="page">
+    <div class="lead">
+      <span class="num">03</span>
+      <h2>Editorial block — eyebrow, headline, body, CTA pair</h2>
+      <p>The workhorse section pattern on the marketing site. Everything readable at body size. This is where luxury or shoutiness lives.</p>
+    </div>
+    <div class="ab">
+      <div class="card v2">
+        <span class="label">v2 · current</span>
+        <div class="edit-block v2">
+          <p class="eyebrow">Rooms &amp; Suites</p>
+          <h3>Every detail meets luxury.</h3>
+          <p>Sixteen rooms and suites, four kitchens, one rooftop. Wake up to the mountains without leaving the property.</p>
+          <div class="btnrow">
+            <button class="btn-primary">Explore Rooms</button>
+            <button class="btn-secondary">See Rates</button>
+          </div>
+        </div>
+        <div class="diag">
+          <span class="tok"><b>H1:</b> Poppins 800 @ 40 px</span>
+          <span class="tok"><b>Surface:</b> Cream #F4EDE3</span>
+          <span class="tok"><b>Eyebrow gold:</b> <span style="color:#C0392B">fails AA</span></span>
+        </div>
+      </div>
+      <div class="card v3">
+        <span class="label">v3 · proposed</span>
+        <div class="edit-block v3">
+          <p class="eyebrow">Rooms &amp; Suites</p>
+          <h3>Every detail meets luxury.</h3>
+          <p>Sixteen rooms and suites, four kitchens, one rooftop. Wake up to the mountains without leaving the property.</p>
+          <div class="btnrow">
+            <button class="btn-primary">Explore Rooms</button>
+            <button class="btn-secondary">See Rates</button>
+          </div>
+        </div>
+        <div class="diag">
+          <span class="tok"><b>H1:</b> Cormorant Garamond 500 @ 42 px</span>
+          <span class="tok"><b>Surface:</b> Warm Cream #EFE7D2</span>
+          <span class="tok"><b>Eyebrow:</b> Deep Gold — <span style="color:#2E7D4F">AA large</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ 04 · DARK PANEL ══════ -->
+<section>
+  <div class="page">
+    <div class="lead">
+      <span class="num">04</span>
+      <h2>Dark surface — neutral ink vs espresso + walnut</h2>
+      <p>The "evening event / winter offer" surface. Left uses v2's neutral Ink Black. Right shows v3's espresso→walnut gradient — chocolate is the luxury dark surface most brands underuse, and walnut already lives in 5 of 6 sampled rooms. Watch how the same foil gold reads on each.</p>
+    </div>
+    <div class="ab">
+      <div class="card v2">
+        <span class="label">v2 · Ink Black #141414</span>
+        <div class="dark-block v2">
+          <p class="kicker">this december</p>
+          <h3>Two nights, one stay.</h3>
+          <p>Warm rooms, hot tea, panoramic terrace. Murree at its quietest.</p>
+          <a class="btn">Plan your December</a>
+        </div>
+        <div class="diag">
+          <span class="tok"><b>Dark:</b> #141414 neutral</span>
+          <span class="tok"><b>Gold:</b> #E89A2C — reads hot</span>
+        </div>
+      </div>
+      <div class="card v3">
+        <span class="label">v3 · Espresso + Walnut</span>
+        <div class="dark-block v3">
+          <p class="kicker">this december</p>
+          <h3>Two nights, one stay.</h3>
+          <p>Warm rooms, hot tea, panoramic terrace. Murree at its quietest.</p>
+          <a class="btn">Plan your December</a>
+        </div>
+        <div class="diag">
+          <span class="tok"><b>Surface:</b> #3A2418 → #6B4423 espresso→walnut</span>
+          <span class="tok"><b>Gold:</b> #C8A45E foil — reads warm on chocolate</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ 05 · PALETTE STRIPS ══════ -->
+<section>
+  <div class="page">
+    <div class="lead">
+      <span class="num">05</span>
+      <h2>Palette strips — every anchor at once</h2>
+      <p>Sanity check. Same eight anchor tokens per side, so the shift is obvious.</p>
+    </div>
+    <div class="palette-row">
+      <div class="palette-col v2">
+        <span class="tag">v2 · current</span>
+        <h4>Poppins 800 · Signal Gold · Ink Black</h4>
+        <div class="palette-strip">
+          <div class="sq dark" style="background:#E89A2C;">E89A2C</div>
+          <div class="sq dark" style="background:#173A2C;">173A2C</div>
+          <div class="sq light" style="background:#F4EDE3;">F4EDE3</div>
+          <div class="sq light" style="background:#FFFFFF; border-color:#e5e5e5;">FFFFFF</div>
+          <div class="sq dark" style="background:#141414;">141414</div>
+          <div class="sq dark" style="background:#1B1B1D;">1B1B1D</div>
+          <div class="sq dark" style="background:#4A4A4F;">4A4A4F</div>
+          <div class="sq light" style="background:#F7D28A;">F7D28A</div>
+        </div>
+      </div>
+      <div class="palette-col v3">
+        <span class="tag">v3 · proposed</span>
+        <h4>Cormorant upright · Foil Gold · Warm Cream · Walnut + Espresso</h4>
+        <div class="palette-strip">
+          <div class="sq dark" style="background:#C8A45E;">C8A45E</div>
+          <div class="sq dark" style="background:#173A2C;">173A2C</div>
+          <div class="sq light" style="background:#EFE7D2;">EFE7D2</div>
+          <div class="sq light" style="background:#F5EEDD;">F5EEDD</div>
+          <div class="sq dark" style="background:#8E5F30;">8E5F30</div>
+          <div class="sq dark" style="background:#3A2418;">3A2418</div>
+          <div class="sq dark" style="background:#1A1512;">1A1512</div>
+          <div class="sq dark" style="background:#D89A5B;">D89A5B</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="verdict-block">
+      <span class="kicker">What to look for as you scan</span>
+      <h3>Three things separate the two — and only one of them is subjective.</h3>
+      <ul>
+        <li><b>Objectively better in v3:</b> gold contrast on cream lifts from 2.0 : 1 to 3.4 : 1. This is a legal / accessibility win, not a taste one.</li>
+        <li><b>Property‑aligned in v3:</b> the cream matches actual room walls, walnut #8E5F30 mirrors the wood tone in 5 of 6 sampled rooms, and espresso becomes the deep card / dark‑panel surface. Chocolate + foil gold is the classic warm‑luxury pairing — Rosewood, Ralph Lauren Home, Bulgari, Bottega. Navy has been dropped from the primary palette; it's a photo tone the brand acknowledges but doesn't lead with.</li>
+        <li><b>Feel difference (taste call):</b> Cormorant Garamond upright sits between Poppins startup and Fraunces couture — the classic Aman / Four Seasons / Le Bristol serif. Editorial without being operatic. Italic is reserved for one‑line poetic accents only.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  Pinemont · v2 vs v3 · a decision aid, not a ratification.<br/>
+  See also: <a href="./brand-kit.html">current kit</a> ·
+  <a href="./brand-kit-audit.html">the six findings</a> ·
+  <a href="./rooms-kit.html">rooms colour kit</a>
+</footer>
+
+</body>
+</html>

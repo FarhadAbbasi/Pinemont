@@ -10,45 +10,76 @@
 
 @layer base {
   :root {
-    /* Brand */
-    --hsq-gold: 41 63% 58%;        /* #D7AB4E */
-    --hsq-gold-hover: 36 61% 53%;  /* #D49237 */
-    --hsq-gold-soft: 39 73% 68%;   /* #EAC273 */
-    --hsq-gold-deep: 40 53% 51%;   /* #C69A3D */
-    --hsq-black: 240 4% 4%;        /* #0A0A0C */
-    --hsq-graphite: 240 4% 11%;    /* #1B1B1D */
-    --hsq-white: 0 0% 100%;
-    --hsq-offwhite: 60 14% 96%;    /* #F6F6F2 */
-    --hsq-cream: 39 100% 93%;      /* #FFF2DB */
-    --hsq-cream-soft: 37 100% 97%; /* #FFF9EF */
+    /* Pinemont v3 · ratified palette
+       ==============================
+       Token names retain the legacy `hsq-*` prefix so existing
+       components keep working — values below are the audit-ratified
+       Pinemont v3 palette. See Pinemont-Brand.md §3 for the mapping. */
 
-    /* Semantic (light mode) */
-    --background: 60 14% 96%;
-    --foreground: 240 4% 4%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 4% 4%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 4% 4%;
-    --primary: 41 63% 58%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 240 4% 11%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 60 14% 96%;
-    --muted-foreground: 240 4% 45%;
-    --accent: 41 63% 58%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 240 4% 85%;
-    --input: 240 4% 85%;
-    --ring: 41 63% 58%;
-    --radius: 1rem;
+    --hsq-gold:        39 51% 58%;  /* #C8A45E · Foil Gold — default decorative anchor */
+    --hsq-gold-hover:  32 74% 45%;  /* #C77E1F · Deep Gold — hover, warning, eyebrow-safe on cream (AA large 3.1:1) */
+    --hsq-gold-soft:   40 60% 80%;  /* #E9D8AE · Foil Highlight — foil-gradient top stop */
+    --hsq-gold-deep:   40 50% 37%;  /* #8E6F30 · Bronze Warm — foil-gradient shadow stop */
+    --hsq-black:       22 18% 9%;   /* #1A1512 · Warm Ink — single dark anchor (replaces Ink + Graphite) */
+    --hsq-graphite:    22 18% 9%;   /* #1A1512 · aliased to Warm Ink so legacy classes keep working */
+    --hsq-white:       0 0% 100%;
+    --hsq-offwhite:    45 55% 91%;  /* #F5EEDD · Linen — warm white for text over photos */
+    --hsq-cream:       41 44% 88%;  /* #EFE7D2 · Warm Cream — default light surface, matches actual room walls */
+    --hsq-cream-soft:  45 55% 91%;  /* #F5EEDD · same as Linen */
 
-    /* Composite tokens */
-    --gradient-gold: linear-gradient(135deg, hsl(41 63% 58%), hsl(41 63% 58%));
-    --gradient-dark: linear-gradient(135deg, hsl(var(--hsq-black)), hsl(var(--hsq-graphite)));
-    --shadow-luxury: 0 25px 50px -12px hsl(var(--hsq-black) / 0.25);
-    --shadow-gold:   0 10px 30px -10px hsl(41 63% 58% / 0.30);
+    /* v3 additions — new tokens */
+    --hsq-pine:        150 43% 16%; /* #173A2C · Pinemont Pine — wordmark, headlines */
+    --hsq-linen:       45 55% 91%;  /* #F5EEDD · alias, semantic name */
+    --hsq-signal:      34 80% 54%;  /* #E89A2C · Signal Gold — CTAs and links only */
+    --hsq-signal-bronze: 27 74% 38%;/* #A66A1B · signal-gradient shadow stop */
+    --hsq-forest-mist: 150 30% 26%; /* #2E5742 · pine hover, divider on pine surfaces */
+    --hsq-slate:       240 3% 30%;  /* #4A4A4F · body copy on cream, AA at 4.5:1+ */
+    --hsq-mute:        45 5% 52%;   /* #8A8780 · captions, meta, image labels */
+    --hsq-amber:       27 62% 60%;  /* #D89A5B · Lamplight Amber — room-echo warm accent */
+    --hsq-success:     145 47% 33%; /* #2E7D4F */
+    --hsq-danger:      5 63% 46%;   /* #C0392B */
+
+    /* Semantic (light mode) — retuned to v3 warm palette */
+    --background:            41 44% 88%;  /* Warm Cream */
+    --foreground:            22 18% 9%;   /* Warm Ink */
+    --card:                  0 0% 100%;
+    --card-foreground:       22 18% 9%;
+    --popover:               0 0% 100%;
+    --popover-foreground:    22 18% 9%;
+    --primary:               39 51% 58%;  /* Foil Gold */
+    --primary-foreground:    22 18% 9%;
+    --secondary:             150 43% 16%; /* Pine */
+    --secondary-foreground:  45 55% 91%;  /* Linen */
+    --muted:                 41 30% 84%;  /* dimmed cream */
+    --muted-foreground:      240 3% 30%;  /* Slate */
+    --accent:                39 51% 58%;  /* Foil Gold */
+    --accent-foreground:     22 18% 9%;
+    --destructive:           5 63% 46%;   /* Danger */
+    --destructive-foreground:45 55% 91%;  /* Linen */
+    --border:                41 15% 78%;
+    --input:                 41 15% 78%;
+    --ring:                  39 51% 58%;  /* Foil Gold ring */
+    --radius:                1rem;
+
+    /* Signature gradients
+       -------------------
+       --gradient-gold defaults to FOIL (calm luxury) — used everywhere decorative.
+       --gradient-signal is the SATURATED gradient for CTAs / links only. */
+    --gradient-gold: linear-gradient(135deg,
+        hsl(40 60% 80%) 0%,
+        hsl(39 51% 58%) 45%,
+        hsl(40 50% 37%) 100%);
+    --gradient-signal: linear-gradient(135deg,
+        hsl(37 87% 76%) 0%,
+        hsl(34 80% 54%) 45%,
+        hsl(27 74% 38%) 100%);
+    --gradient-dark: linear-gradient(135deg,
+        hsl(150 55% 12%) 0%,
+        hsl(22 18% 9%) 100%);
+
+    --shadow-luxury: 0 18px 40px -14px hsl(150 43% 16% / 0.35),
+                     0 4px 10px -4px hsl(22 18% 9% / 0.15);
+    --shadow-gold:   0 12px 30px -12px hsl(39 51% 58% / 0.55);
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -98,9 +129,19 @@
     color: hsl(var(--foreground));
     font-family: var(--font-sans), system-ui, sans-serif;
   }
-  h1, h2, h3, h4, h5, h6 {
+  /* Display headings use Cormorant Garamond upright — the luxury-hospitality
+     serif (Aman / Le Bristol / Four Seasons register). h4-h6 stay in the
+     workhorse sans for compact utility labels. See Pinemont-Brand.md §4. */
+  h1, h2, h3 {
+    font-family: var(--font-luxe), "Cormorant Garamond", Georgia, serif;
+    font-weight: 500;
+    color: hsl(var(--foreground));
+    letter-spacing: -0.005em;
+    line-height: 1.15;
+  }
+  h4, h5, h6 {
     font-family: var(--font-sans), system-ui, sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     color: hsl(var(--foreground));
   }
   /* Selection — matches §D.4 selection rule */
@@ -155,14 +196,17 @@
     font-weight: 400;
   }
 
-  /* Section eyebrow — §C.4 */
+  /* Section eyebrow — Pinemont v3 §3.
+     Colour uses Deep Gold (--hsq-gold-hover) not Foil Gold, so eyebrow
+     text on cream reaches WCAG AA large-text (3.1:1). Never revert to
+     --hsq-gold here — it fails contrast at eyebrow size. */
   .eyebrow {
     font-size: 0.875rem;
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: hsl(var(--hsq-gold));
+    color: hsl(var(--hsq-gold-hover));
   }
 
   /* Card surface — §B.3 */
